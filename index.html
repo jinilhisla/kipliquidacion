@@ -1,0 +1,4492 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://kipliquidacion.multiscreensite.com/#dmContent -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="touch">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <style id="customRules"></style>
+    <script async="" src="js/sp-2.0.0-dm-0.1.min.js"></script>
+    <script type="text/javascript">
+      window._currentDevice = "mobile";
+      window.Parameters = window.Parameters || {
+        AjaxContainer: "div.dmBody",
+        WrappingContainer: "div.dmOuter",
+        HomeUrl: "https://kipliquidacion.multiscreensite.com/",
+        AccountUUID: "c4adfeb1aafe468bbb6510c13c6f1b38",
+        SystemID: "US_DIRECT_PRODUCTION",
+        SiteAlias: "a92b6a4f",
+        SiteType: atob("RFVEQU9ORQ=="),
+        PublicationDate: "Sat Oct 07 01:28:16 UTC 2023",
+        ExternalUid: null,
+        IsSiteMultilingual: false,
+        InitialPostAlias: "",
+        InitialDynamicItem: "",
+        DynamicPageInfo: {
+          isDynamicPage: false,
+          base64JsonRowData: "null",
+        },
+        InitialPageAlias: "home",
+        InitialPageUuid: "6a7112b658da48cba705858205b5e1f6",
+        InitialPageId: "26495817",
+        InitialEncodedPageAlias: "aG9tZQ==",
+        CurrentPageUrl: "",
+        IsCurrentHomePage: true,
+        AllowAjax: false,
+        AfterAjaxCommand: null,
+        HomeLinkText: "Back To Home",
+        UseGalleryModule: false,
+        CurrentThemeName: "Layout Theme",
+        ThemeVersion: "38150",
+        DefaultPageAlias: "",
+        RemoveDID: true,
+        WidgetStyleID: null,
+        IsHeaderFixed: false,
+        IsHeaderSkinny: false,
+        IsBfs: true,
+        StorePageAlias: "null",
+        StorePagesUrls: "e30=",
+        IsNewStore: "false",
+        StorePath: "",
+        StoreId: "null",
+        StoreVersion: 0,
+        StoreBaseUrl: "",
+        StoreCleanUrl: true,
+        StoreDisableScrolling: true,
+        IsStoreSuspended: false,
+        NotificationSubDomain: "null",
+        HasCustomDomain: false,
+        showCookieNotification: false,
+        cookiesNotificationMarkup: "null",
+        translatedPageUrl: "",
+        isFastMigrationSite: false,
+        sidebarPosition: "NA",
+        currentLanguage: "en",
+        currentLocale: "en",
+        NavItems: "{}",
+        errors: {
+          general:
+            "There was an error connecting to the page.<br/> Make sure you are not offline.",
+          password: "Incorrect name/password combination",
+          tryAgain: "Try again",
+        },
+        NavigationAreaParams: {
+          ShowBackToHomeOnInnerPages: true,
+          NavbarSize: 5,
+          NavbarLiveHomePage: "https://kipliquidacion.multiscreensite.com/",
+          BlockContainerSelector: ".dmBody",
+          NavbarSelector: "#dmNav:has(a)",
+          SubNavbarSelector: "#subnav_main",
+        },
+        hasCustomCode: false,
+        planID: "7",
+        customTemplateId: "null",
+        siteTemplateId: "null",
+        productId: "DM_DIRECT",
+        disableTracking: false,
+        pageType: "FROM_SCRATCH",
+        isRuntimeServer: true,
+        isInEditor: false,
+      };
+
+      window.Parameters.LayoutID = {};
+      window.Parameters.LayoutID[window._currentDevice] = 22;
+      window.Parameters.LayoutVariationID = {};
+      window.Parameters.LayoutVariationID[window._currentDevice] = 5;
+    </script>
+
+    <!-- Injecting site-wide to the head -->
+
+    <!-- End Injecting site-wide to the head -->
+
+    <!-- Inject secured cdn script -->
+
+    <!-- ========= Meta Tags ========= -->
+    <!-- PWA settings -->
+    <script>
+      function toHash(str) {
+        var hash = 5381,
+          i = str.length;
+        while (i) {
+          hash = (hash * 33) ^ str.charCodeAt(--i);
+        }
+        return hash >>> 0;
+      }
+    </script>
+    <script>
+      (function (global) {
+        //const cacheKey = global.cacheKey;
+        const isOffline = "onLine" in navigator && navigator.onLine === false;
+        const hasServiceWorkerSupport = "serviceWorker" in navigator;
+        if (isOffline) {
+          console.log("offline mode");
+        }
+        if (!hasServiceWorkerSupport) {
+          console.log("service worker is not supported");
+        }
+        if (hasServiceWorkerSupport && !isOffline) {
+          window.addEventListener("load", function () {
+            const serviceWorkerPath = "/runtime-service-worker.js?v=3";
+            navigator.serviceWorker
+              .register(serviceWorkerPath, { scope: "./" })
+              .then(
+                function (registration) {
+                  // Registration was successful
+                  console.log(
+                    "ServiceWorker registration successful with scope: ",
+                    registration.scope
+                  );
+                },
+                function (err) {
+                  // registration failed :(
+                  console.log("ServiceWorker registration failed: ", err);
+                }
+              )
+              .catch(function (err) {
+                console.log(err);
+              });
+          });
+
+          // helper function to refresh the page
+          var refreshPage = (function () {
+            var refreshing;
+            return function () {
+              if (refreshing) return;
+              // prevent multiple refreshes
+              var refreshkey = "refreshed" + location.href;
+              var prevRefresh = localStorage.getItem(refreshkey);
+              if (prevRefresh) {
+                localStorage.removeItem(refreshkey);
+                if (Date.now() - prevRefresh < 30000) {
+                  return; // dont go into a refresh loop
+                }
+              }
+              refreshing = true;
+              localStorage.setItem(refreshkey, Date.now());
+              console.log("refereshing page");
+              window.location.reload();
+            };
+          })();
+
+          function messageServiceWorker(data) {
+            return new Promise(function (resolve, reject) {
+              if (navigator.serviceWorker.controller) {
+                var worker = navigator.serviceWorker.controller;
+                var messageChannel = new MessageChannel();
+                messageChannel.port1.onmessage = replyHandler;
+                worker.postMessage(data, [messageChannel.port2]);
+                function replyHandler(event) {
+                  resolve(event.data);
+                }
+              } else {
+                resolve();
+              }
+            });
+          }
+        }
+      })(window);
+    </script>
+    <!-- Add manifest -->
+    <!-- End PWA settings -->
+
+    <link rel="canonical" href="https://kipliquidacion.multiscreensite.com/" />
+
+    <meta
+      id="view"
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!--Add favorites icons-->
+
+    <link
+      rel="apple-touch-icon"
+      type="image/x-icon"
+      href="https://static.cdn-website.com/runtime/favicon_d1_res.ico"
+    />
+
+    <!-- End favorite icons -->
+
+    <link
+      rel="preconnect"
+      href="https://lirp.cdn-website.com/"
+      crossorigin=""
+    />
+
+    <!-- render the required CSS and JS in the head section -->
+    <script>
+      window.SystemID = "US_DIRECT_PRODUCTION";
+
+      if (!window.dmAPI) {
+        window.dmAPI = {
+          registerExternalRuntimeComponent: function () {},
+          getCurrentDeviceType: function () {
+            return window._currentDevice;
+          },
+        };
+      }
+
+      if (!window.requestIdleCallback) {
+        window.requestIdleCallback = function (fn) {
+          setTimeout(fn, 0);
+        };
+      }
+    </script>
+    <!-- loadCSS function -->
+
+    <script id="d-js-load-css">
+      /**
+       * There are a few <link> tags with CSS resource in them that are preloaded in the page
+       * in each of those there is a "onload" handler which invokes the loadCSS callback
+       * defined here.
+       * We are monitoring 3 main CSS files - the runtime, the global and the page.
+       * When each load we check to see if we can append them all in a batch. If threre
+       * is no page css (which may happen on inner pages) then we do not wait for it
+       */
+      (function () {
+        let cssLinks = {};
+        function loadCssLink(link) {
+          link.onload = null;
+          link.rel = "stylesheet";
+          link.type = "text/css";
+        }
+
+        function checkCss() {
+          const pageCssLink = document.querySelector("[id*='CssLink']");
+
+          if (
+            cssLinks &&
+            cssLinks.runtime &&
+            cssLinks.global &&
+            (!pageCssLink || cssLinks.page)
+          ) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+              storedPageCssLink.disabled = true;
+              loadCssLink(storedPageCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+              setTimeout(() => {
+                storedRuntimeCssLink.disabled = false;
+                storedGlobalCssLink.disabled = false;
+                if (storedPageCssLink) {
+                  storedPageCssLink.disabled = false;
+                }
+                cssLinks = null;
+              }, 0);
+            });
+          }
+        }
+
+        function loadCSS(link) {
+          try {
+            var urlParams = new URLSearchParams(window.location.search);
+            var noCSS = !!urlParams.get("nocss");
+            var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+            if (noCSS) {
+              return;
+            }
+            if (link.href.includes("d-css-runtime")) {
+              cssLinks.runtime = link;
+              checkCss();
+            } else if (link.id === "siteGlobalCss") {
+              cssLinks.global = link;
+              checkCss();
+            } else if (link.id.includes("CssLink")) {
+              cssLinks.page = link;
+              checkCss();
+            } else {
+              requestIdleCallback(function () {
+                window.setTimeout(function () {
+                  loadCssLink(link);
+                }, parseInt(cssTimeout, 10));
+              });
+            }
+          } catch (e) {
+            throw e;
+          }
+        }
+        window.loadCSS = window.loadCSS || loadCSS;
+      })();
+    </script>
+
+    <script data-role="deferred-init" type="text/javascript">
+      /* usage: window.getDeferred(<deferred name>).resolve() or window.getDeferred(<deferred name>).promise.then(...)*/
+      function Def() {
+        this.promise = new Promise(
+          function (a, b) {
+            (this.resolve = a), (this.reject = b);
+          }.bind(this)
+        );
+      }
+      const defs = {};
+      window.getDeferred = function (a) {
+        return null == defs[a] && (defs[a] = new Def()), defs[a];
+      };
+      window.waitForDeferred = function (b, a, c) {
+        let d = window?.getDeferred?.(b);
+        d
+          ? d.promise.then(a)
+          : c && ["complete", "interactive"].includes(document.readyState)
+          ? setTimeout(a, 1)
+          : c
+          ? document.addEventListener("DOMContentLoaded", a)
+          : console.error(`Deferred  does not exist`);
+      };
+    </script>
+    <style id="forceCssIncludes">
+      /* This file is auto-generated from a `scss` file with the same name */
+
+      .videobgwrapper {
+        overflow: hidden;
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        border-radius: inherit;
+      }
+      .videobgframe {
+        position: absolute;
+        width: 101%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        object-fit: fill;
+      }
+      #dm video.videobgframe {
+        margin: 0;
+      }
+      @media (max-width: 767px) {
+        .dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done) {
+          min-height: 80vh;
+        }
+      }
+      @media (min-width: 1025px) {
+        .dmRoot .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done) {
+          min-height: 45vh;
+        }
+      }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .responsiveTablet
+          .dmPhotoGallery.newPhotoGallery:not(.photo-gallery-done) {
+          min-height: 45vh;
+        }
+      }
+      #dm [data-show-on-page-only] {
+        display: none !important;
+      }
+    </style>
+    <style id="cssVariables" type="text/css">
+      :root {
+        --color_1: rgba(255, 255, 255, 1);
+        --color_2: rgba(255, 255, 255, 1);
+        --color_3: rgba(246, 244, 235, 1);
+        --color_4: rgba(86, 86, 86, 1);
+        --color_5: rgba(39, 54, 46, 1);
+        --color_6: rgba(145, 127, 93, 1);
+        --color_7: rgba(0, 0, 0, 1);
+        --color_8: rgba(0, 0, 0, 0);
+      }
+    </style>
+
+    <style id="hideAnimFix">
+      .dmDesktopBody:not(.editGrid)
+        [data-anim-desktop]:not([data-anim-desktop="none"]),
+      .dmDesktopBody:not(.editGrid) [data-anim-extended] {
+        visibility: hidden;
+      }
+      .dmDesktopBody:not(.editGrid)
+        .dmNewParagraph[data-anim-desktop]:not([data-anim-desktop="none"]),
+      .dmDesktopBody:not(.editGrid) .dmNewParagraph[data-anim-extended] {
+        visibility: hidden !important;
+      }
+    </style>
+
+    <style id="criticalCss">
+      @charset "UTF-8";
+      *,
+      .dmPopup,
+      :after,
+      :before {
+        box-sizing: border-box;
+      }
+      @font-face {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://irp.cdn-website.com/fonts/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+          U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Red Rose";
+        font-style: normal;
+        font-weight: 300 700;
+        font-display: swap;
+        src: url(https://irp.cdn-website.com/fonts/s/redrose/v20/QdVVSTYiLBjouPgEUYLjmQQ.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC,
+          U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      :root {
+        --color_1: rgba(255, 255, 255, 1);
+        --color_2: rgba(255, 255, 255, 1);
+        --color_3: rgba(246, 244, 235, 1);
+        --color_4: rgba(86, 86, 86, 1);
+        --color_5: rgba(39, 54, 46, 1);
+        --color_6: rgba(145, 127, 93, 1);
+        --color_7: rgba(0, 0, 0, 1);
+        --color_8: rgba(0, 0, 0, 0);
+      }
+      .dmInner {
+        min-height: 100vh !important;
+        position: relative;
+      }
+      [dmtemplateid*="amburger"] .dmLayoutWrapper {
+        overflow: hidden;
+      }
+      #dmRoot.dmMobileBody #dm .dmOuter :not(.dmInner) {
+        background-attachment: scroll !important;
+      }
+      #dm .dmWidget .icon {
+        font-size: 26px;
+      }
+      body.dmRoot #dm .dmOuter .dmInner .dmWidget .icon.hasFontIcon {
+        height: 26px;
+        margin-top: -13px;
+        line-height: normal;
+        text-align: center;
+        background-image: none;
+      }
+      .dmRoot .hasFontIcon {
+        background-image: none !important;
+      }
+      .dmPopupMask {
+        position: fixed;
+        margin: 0;
+        display: none;
+        width: 10px;
+        z-index: 1000000999;
+        top: 0;
+        left: 0;
+      }
+      #dmRoot .dmPopup,
+      .dmPopup,
+      .dmPopupClose:before,
+      [data-display-type="block"] {
+        display: block;
+      }
+      .dmPopup {
+        padding: 10px;
+        text-align: left;
+        position: fixed;
+        margin: 0 10px;
+        top: 10px;
+        left: 0;
+        width: 93%;
+        z-index: 1000009999 !important;
+        background: #f5f5f5;
+        overflow-y: auto;
+        height: 100%;
+      }
+      .dmPopup .dmPopupTitle {
+        text-align: left;
+        font: 700 19px Helvetica, Arial;
+        margin: 20px 20px 35px;
+        color: #999;
+      }
+      #dmPopup {
+        opacity: 0;
+      }
+      .dmPopupClose,
+      .dmPopupClose:before {
+        position: absolute;
+        visibility: visible;
+      }
+      .dmPopupClose {
+        border-radius: 25px;
+        width: 27px;
+        height: 27px;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0.4);
+        top: 12px;
+        right: 12px;
+      }
+      .dmPopupClose:before {
+        font-size: 20px;
+        color: #000;
+        top: 3px;
+        right: 3px;
+      }
+      #dm .dmBackToTop {
+        position: fixed !important;
+      }
+      .dmRespRow.fullBleedMode > .dmRespColsWrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .dmRespRow.fullBleedMode {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      #dm .dmRespRow .dmRespColsWrapper {
+        display: flex;
+      }
+      .dmMobileBody #dm .dmRespRow .dmRespColsWrapper {
+        flex-wrap: wrap;
+      }
+      .pswp {
+        z-index: 9999999999 !important;
+      }
+      #dm .hasBackgroundOverlay:not(.dmPopupPage):not(.layout-drawer) {
+        position: relative !important;
+      }
+      #dm .hasBackgroundOverlay:not(.hasExtraLayerOverlay):before {
+        display: block !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        content: " " !important;
+        border-radius: inherit;
+      }
+      #dm .dmInner .dmWidget.align-center,
+      .align-center {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .text-align-center {
+        text-align: center;
+      }
+      body.fix-mobile-scrolling {
+        overflow: initial;
+      }
+      #dmRoot {
+        text-decoration-skip-ink: none;
+      }
+      body {
+        -webkit-overflow-scrolling: touch;
+      }
+      :not(.runtime-module-container) .layout-drawer,
+      :not(.runtime-module-container) .layout-drawer-hamburger,
+      :not(.runtime-module-container) .layout-drawer-overlay {
+        visibility: hidden;
+      }
+      .pswp__ui,
+      .runtime-module-container .layout-drawer,
+      .runtime-module-container .layout-drawer-hamburger,
+      .runtime-module-container .layout-drawer-overlay {
+        visibility: visible;
+      }
+      :not(.runtime-module-container) .layout-drawer {
+        position: fixed;
+        transform: translate(-100%, -100%);
+      }
+      :not(.runtime-module-container) .layout-drawer-overlay {
+        opacity: 0;
+      }
+      .runtime-module-container {
+        width: 100%;
+      }
+      .runtime-module-container[dmtemplateid*="amburger"] #site_content,
+      .runtime-module-container[dmtemplateid*="amburger"] .dmInner {
+        position: static;
+      }
+      .runtime-module-container[dmtemplateid*="amburger"]
+        #site_content
+        .site_content {
+        position: relative;
+      }
+      .runtime-module-container[dmtemplateid*="amburger"] .dmLayoutWrapper {
+        background-color: transparent;
+      }
+      .runtime-module-container .hamburger-header-container {
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+      .runtime-module-container .hamburger-header-container .hamburger-header {
+        min-height: 43px;
+      }
+      .runtime-module-container[dmtemplateid*="amburger"] .site_content {
+        margin-top: 59px;
+      }
+      .runtime-module-container .layout-drawer,
+      .runtime-module-container .layout-drawer-overlay {
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      .runtime-module-container .layout-drawer {
+        background-color: #fff;
+        width: 75vw;
+        transform: translate(-100%, 0);
+        overflow: auto;
+        -webkit-overflow-scrolling: auto;
+        z-index: 13;
+        display: flex;
+        flex-direction: column;
+      }
+      .runtime-module-container
+        .layout-drawer
+        .dmRespRow:not(.dmPlaceHolderRespRow)
+        .dmRespColsWrapper
+        .dmRespCol:not(.content-removed):only-child:empty {
+        min-height: 0;
+      }
+      .runtime-module-container .layout-drawer[data-origin="top"] {
+        min-height: 20vh;
+        min-width: 40vw;
+        max-height: 100%;
+        height: auto;
+        width: 100%;
+        transform: translate(0, -100%);
+      }
+      .runtime-module-container
+        .layout-drawer[data-origin="top"]#mobile-hamburger-drawer {
+        min-height: 40vh;
+      }
+      .runtime-module-container .layout-drawer-overlay {
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        z-index: 6;
+      }
+      body:not([data-flex-site])
+        .layout-drawer
+        .dmRespRow:not(:first-of-type):not(:last-of-type) {
+        flex: 1 1 auto;
+      }
+      .layout-drawer-hamburger {
+        position: fixed;
+        left: 18px;
+        margin-left: env(safe-area-inset-left);
+        padding: 17px 11px;
+        z-index: 13;
+        width: 52px;
+        height: 52px;
+        background-color: transparent;
+        color: #787878;
+        display: flex;
+        flex-direction: column;
+        border: 0;
+        justify-content: space-between;
+        align-items: stretch;
+        outline: 0;
+        top: 18px;
+        border-radius: 0;
+      }
+      .layout-drawer-hamburger .hamburger__slice {
+        display: block;
+        height: 0;
+        width: 100%;
+        border: 1px solid currentColor;
+        transform-origin: center;
+      }
+      @media (max-width: 767px) {
+        .layout-drawer-hamburger {
+          position: fixed;
+          left: 10px;
+          margin-left: env(safe-area-inset-left);
+          padding: 13px 9px;
+          z-index: 13;
+          width: 40px;
+          height: 40px;
+          background-color: transparent;
+          color: #787878;
+          display: flex;
+          flex-direction: column;
+          border: 0;
+          justify-content: space-between;
+          align-items: stretch;
+          outline: 0;
+          top: 10px;
+          border-radius: 0;
+        }
+        .layout-drawer-hamburger .hamburger__slice {
+          display: block;
+          height: 0;
+          width: 100%;
+          border: 1px solid currentColor;
+          transform-origin: center;
+        }
+      }
+      .hamburger-reverse .layout-drawer-hamburger {
+        left: auto;
+        right: 10px;
+        margin-right: env(safe-area-inset-right);
+      }
+      @media (min-width: 1025px) {
+        :root {
+          --btn-text-font-size: 16px;
+        }
+      }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        :root {
+          --btn-text-font-size: 16px;
+        }
+      }
+      #dm-outer-wrapper.hamburger-reverse
+        #hamburger-header-container
+        #mobile-hamburger-header
+        .dmRespRow
+        .dmRespColsWrapper {
+        flex-direction: row-reverse;
+        direction: ltr;
+      }
+      #dm-outer-wrapper
+        #hamburger-header-container
+        #mobile-hamburger-header
+        .dmRespRow
+        .dmRespCol {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      nav {
+        display: block;
+      }
+      html {
+        font-family: Source Sans Pro;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      h1 {
+        font-size: 2em;
+        margin: 0.67em 0;
+      }
+      img {
+        border: 0;
+        max-width: 100%;
+        -ms-interpolation-mode: bicubic;
+        display: inline-block;
+      }
+      button {
+        font-family: inherit;
+        font-size: 100%;
+        margin: 0;
+        line-height: normal;
+        text-transform: none;
+        -webkit-appearance: button;
+      }
+      button::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+      }
+      .dmRespRow {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      .dmRespRow:after,
+      .dmRespRow:before {
+        content: " ";
+        display: table;
+      }
+      .dmRespRow:after {
+        clear: both;
+      }
+      .dmRespRow,
+      .dmRespRow .dmRespColsWrapper {
+        max-width: 960px;
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+      }
+      @media screen and (min-width: 1200px) {
+        .rows-1200 .dmRespRow:not(.fullBleedMode) .dmRespColsWrapper {
+          max-width: 1200px;
+        }
+      }
+      .dmRespRow .dmRespCol {
+        position: relative;
+        width: 100%;
+        display: inline-block;
+        vertical-align: top;
+        float: left;
+      }
+      .dmRespRow .dmRespCol > * {
+        max-width: 100%;
+      }
+      .dmMobileBody .dmRespRow .dmRespCol {
+        position: relative;
+        padding-left: 15px;
+        padding-right: 15px;
+        float: left;
+      }
+      .dmMobileBody .dmRespRow .small-2 {
+        position: relative;
+        width: 16.66667%;
+      }
+      .dmMobileBody .dmRespRow .small-6 {
+        position: relative;
+        width: 50%;
+      }
+      .dmMobileBody .dmRespRow .small-10 {
+        position: relative;
+        width: 83.33333%;
+      }
+      .dmMobileBody .dmRespRow .small-12 {
+        position: relative;
+        width: 100%;
+      }
+      [class*=" dm-common-icons-"] {
+        speak: none;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-family: dm-common-icons !important;
+      }
+      .dm-common-icons-close:before {
+        content: "\e901";
+      }
+      #dm div.dmContent [class*=" icon-"],
+      [class*=" icon-"] {
+        font-family: FontAwesome !important;
+        font-weight: 400;
+        font-style: normal;
+        text-decoration: inherit;
+        -webkit-font-smoothing: antialiased;
+      }
+      [class*=" icon-"]:before {
+        text-decoration: none;
+        display: inline-block;
+        speak: none;
+      }
+      a [class*=" icon-"] {
+        display: inline;
+      }
+      [class*=" icon-"] {
+        display: inline;
+        width: auto;
+        height: auto;
+        line-height: normal;
+        vertical-align: baseline;
+        background-image: none;
+        background-position: 0 0;
+        background-repeat: repeat;
+        margin-top: 0;
+      }
+      .icon-star:before {
+        content: "\f005";
+      }
+      .icon-angle-down:before {
+        content: "\f107";
+      }
+      #dm .dmRespRow .dmRespCol > .dmWidget {
+        overflow: initial;
+      }
+      .dmLayoutWrapper.dmStandardMobile,
+      .pswp,
+      .pswp__item,
+      .pswp__scroll-wrap {
+        overflow: hidden;
+      }
+      @media (min-width: 768px) {
+        .hamburger-reverse .layout-drawer-hamburger {
+          right: 18px;
+        }
+        #dm .dmRespRow .dmRespCol > .dmWidget {
+          width: 280px;
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 767px) {
+        #dm .dmInner .dmWidget {
+          width: 100%;
+        }
+      }
+      #dm .dmInner .dmWidget:not(.displayNone) {
+        display: inline-block;
+      }
+      #dm .dmInner .dmWidget:not(.displayNone)[data-display-type="block"] {
+        display: block;
+      }
+      #dm .dmInner .dmWidget {
+        text-decoration: none;
+        margin: 10px 0;
+        clear: both;
+        position: relative;
+        text-align: center;
+        line-height: 22px;
+        box-shadow: none;
+        background-image: none;
+        padding: 0;
+        height: auto;
+        border-style: solid;
+        white-space: nowrap;
+      }
+      #dm .dmInner .dmWidget:after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        width: 0;
+        margin-right: -0.25em;
+      }
+      #dm .dmInner .dmWidget .iconBg {
+        position: absolute;
+        left: 0;
+        width: 50px;
+        top: 50%;
+        margin-top: -13px;
+      }
+      #dm .dmWidget .text {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 1.125em;
+        line-height: normal;
+        white-space: normal;
+        padding: 10px 7px;
+        max-width: 98%;
+      }
+      @supports (padding: 0px) {
+        .dmMobileBody .dmRespColsWrapper {
+          padding-left: env(safe-area-inset-left) !important;
+          padding-right: env(safe-area-inset-right) !important;
+        }
+      }
+      .dmNewParagraph[data-version] {
+        line-height: initial;
+      }
+      .dmNewParagraph[data-version] .text-align-center {
+        text-align: center !important;
+      }
+      .dmNewParagraph[data-version] h1,
+      .dmNewParagraph[data-version] h3,
+      .dmNewParagraph[data-version] p {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .imageWidget a {
+        font-style: italic;
+        text-align: center;
+      }
+      .imageWidget img[width][height] {
+        height: auto;
+      }
+      .pswp,
+      .pswp__bg,
+      .pswp__scroll-wrap {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .pswp {
+        display: none;
+        -ms-touch-action: none;
+        touch-action: none;
+        -webkit-text-size-adjust: 100%;
+        -webkit-backface-visibility: hidden;
+        outline: 0;
+      }
+      .pswp * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      .pswp__bg {
+        background: #000;
+        opacity: 0;
+        -webkit-backface-visibility: hidden;
+        will-change: opacity;
+      }
+      .pswp__container {
+        -webkit-touch-callout: none;
+        -ms-touch-action: none;
+        touch-action: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        -webkit-backface-visibility: hidden;
+        will-change: transform;
+      }
+      .pswp__item {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
+      .pswp__button {
+        position: relative;
+        overflow: visible;
+        -webkit-appearance: none;
+        display: block;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        float: right;
+        opacity: 0.75;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+      .pswp__button::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+      }
+      .pswp__button,
+      .pswp__button--arrow--left:before,
+      .pswp__button--arrow--right:before {
+        background: url(/_dm/s/rt/scripts/vendor/photoswipe4/icons/default-skin.png)
+          no-repeat;
+        background-size: 264px 88px;
+        width: 44px;
+        height: 44px;
+      }
+      .pswp__button--close {
+        background-position: 0 -44px;
+      }
+      .pswp__button--share {
+        background-position: -44px -44px;
+      }
+      .pswp__button--fs {
+        display: none;
+      }
+      .pswp__button--zoom {
+        display: none;
+        background-position: -88px 0;
+      }
+      .pswp__button--arrow--left,
+      .pswp__button--arrow--right {
+        background: 0 0;
+        top: 50%;
+        margin-top: -50px;
+        width: 70px;
+        height: 100px;
+        position: absolute;
+      }
+      .pswp__button--arrow--left {
+        left: 0;
+      }
+      .pswp__button--arrow--right {
+        right: 0;
+      }
+      .pswp__button--arrow--left:before,
+      .pswp__button--arrow--right:before {
+        content: "";
+        top: 35px;
+        background-color: rgba(0, 0, 0, 0.3);
+        height: 30px;
+        width: 32px;
+        position: absolute;
+      }
+      .pswp__button--arrow--left:before {
+        left: 6px;
+        background-position: -138px -44px;
+      }
+      .pswp__button--arrow--right:before {
+        right: 6px;
+        background-position: -94px -44px;
+      }
+      .pswp__share-modal {
+        display: block;
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        position: absolute;
+        z-index: 1600;
+        opacity: 0;
+        -webkit-backface-visibility: hidden;
+        will-change: opacity;
+      }
+      .pswp__share-modal--hidden {
+        display: none;
+      }
+      .pswp__share-tooltip {
+        z-index: 1620;
+        position: absolute;
+        background: #fff;
+        top: 56px;
+        border-radius: 2px;
+        display: block;
+        width: auto;
+        right: 44px;
+        -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+        -webkit-transform: translateY(6px);
+        -ms-transform: translateY(6px);
+        transform: translateY(6px);
+        -webkit-backface-visibility: hidden;
+        will-change: transform;
+      }
+      .pswp__counter,
+      .pswp__preloader {
+        height: 44px;
+        position: absolute;
+        top: 0;
+      }
+      .pswp__counter {
+        left: 0;
+        font-size: 13px;
+        line-height: 44px;
+        color: #fff;
+        opacity: 0.75;
+        padding: 0 10px;
+      }
+      .pswp__caption {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        min-height: 44px;
+      }
+      .pswp__caption__center {
+        max-width: 95%;
+        margin: 0 auto;
+        font-size: 16px;
+        padding: 10px;
+        line-height: 20px;
+        color: #ccc;
+        width: 960px;
+        font-weight: 700;
+        text-align: center;
+      }
+      .pswp__preloader {
+        width: 44px;
+        left: 50%;
+        margin-left: -22px;
+        opacity: 0;
+        will-change: opacity;
+      }
+      .pswp__preloader__icn {
+        width: 20px;
+        height: 20px;
+        margin: 12px;
+      }
+      @media screen and (max-width: 1024px) {
+        .pswp__preloader {
+          position: relative;
+          left: auto;
+          top: auto;
+          margin: 0;
+          float: right;
+        }
+      }
+      .pswp__ui {
+        -webkit-font-smoothing: auto;
+        opacity: 1;
+        z-index: 1550;
+      }
+      .pswp__top-bar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 44px;
+        width: 100%;
+      }
+      .pswp__caption,
+      .pswp__top-bar {
+        -webkit-backface-visibility: hidden;
+        will-change: opacity;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .pswp__ui--hidden .pswp__button--arrow--left,
+      .pswp__ui--hidden .pswp__button--arrow--right,
+      .pswp__ui--hidden .pswp__caption,
+      .pswp__ui--hidden .pswp__top-bar {
+        opacity: 0.001;
+      }
+      img[width][height] {
+        height: auto;
+      }
+      * {
+        border: 0 solid #333;
+        scrollbar-arrow-color: #fff;
+        scrollbar-track-color: #f2f2f2;
+        scrollbar-face-color: silver;
+        scrollbar-highlight-color: silver;
+        scrollbar-3dlight-color: silver;
+        scrollbar-shadow-color: silver;
+        scrollbar-darkshadow-color: silver;
+        scrollbar-width: 12px;
+      }
+      body {
+        width: 100%;
+        overflow: hidden;
+        -webkit-text-size-adjust: 100% !important;
+        -ms-text-size-adjust: 100% !important;
+      }
+      A IMG {
+        border: none;
+      }
+      h1,
+      h3,
+      ul {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .dmInner * {
+        -webkit-font-smoothing: antialiased;
+      }
+      a,
+      img,
+      li,
+      ul {
+        vertical-align: top;
+      }
+      #site_content {
+        position: relative;
+      }
+      .dmOuter {
+        word-wrap: break-word;
+      }
+      .dmInner {
+        font-size: 16px;
+        background: #fff;
+        color: #666;
+      }
+      .dmInner a {
+        color: #463939;
+        outline: 0;
+        vertical-align: inherit;
+      }
+      .dmInner ul:not(.defaultList) {
+        padding: 0;
+      }
+      DIV.dmBody {
+        padding: 0;
+        clear: both;
+      }
+      .dmContent {
+        margin: 0;
+        padding: 0;
+      }
+      #site_content ul:not(.defaultList) {
+        -webkit-padding-start: 0;
+        -moz-padding-start: 0;
+        list-style-position: inside;
+      }
+      .dmRespRowsWrapper {
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      .imageWidget:not(.displayNone) img {
+        width: 100%;
+      }
+      .dmMobileBody .imageWidget {
+        text-align: center;
+      }
+      h3 {
+        font-weight: 400;
+        font-size: 23px;
+      }
+      #dm .dmRespColsWrapper {
+        display: block;
+      }
+      .dmNewParagraph {
+        text-align: left;
+        margin: 8px 0;
+        padding: 2px 0;
+      }
+      .dmLinksMenu > ul {
+        display: block;
+        margin: 0;
+        font-size: inherit;
+      }
+      #dm .dmBackToTop {
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 200;
+        bottom: 10px;
+        right: 10px;
+        border: 1px solid #fff;
+        -moz-box-shadow: 0 0 1px rgba(247, 247, 247, 0.4);
+        -webkit-box-shadow: 0 0 1px rgba(247, 247, 247, 0.4);
+        box-shadow: 0 0 1px rgba(247, 247, 247, 0.4);
+      }
+      #dm .dmBackToTop:after,
+      #dm .dmBackToTop:before {
+        content: "";
+        position: absolute;
+        width: 4px;
+        height: 15px;
+        background: #fff;
+        border-radius: 2px;
+        left: 8px;
+        top: 6px;
+        transform: rotate(45deg);
+      }
+      #dm .dmBackToTop:after {
+        left: 16px;
+        transform: rotate(-45deg);
+      }
+      body {
+        background-color: #eee;
+      }
+      .main-navigation.unifiednav {
+        -js-display: flex;
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        overflow: visible;
+      }
+      .main-navigation.unifiednav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 1rem;
+      }
+      .main-navigation.unifiednav .unifiednav__container {
+        -js-display: flex;
+        display: flex;
+        justify-content: flex-start;
+        list-style: none;
+      }
+      .main-navigation.unifiednav
+        .unifiednav__container
+        > .unifiednav__item-wrap {
+        -js-display: flex;
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+        font-weight: 400;
+      }
+      .main-navigation.unifiednav
+        .unifiednav__container:not([data-depth])
+        > .unifiednav__item-wrap::after,
+      .main-navigation.unifiednav
+        .unifiednav__container:not([data-depth])
+        > .unifiednav__item-wrap::before {
+        content: "";
+        align-self: center;
+        font-weight: 700;
+      }
+      .main-navigation.unifiednav
+        .unifiednav__container
+        > .unifiednav__item-wrap
+        > .unifiednav__item {
+        -js-display: flex;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        color: inherit;
+        text-decoration: none;
+        position: relative;
+        padding: 12px 15px;
+        margin: 0;
+        font-weight: inherit;
+        letter-spacing: 0.03em;
+      }
+      .main-navigation.unifiednav
+        .unifiednav__container:not([data-depth])
+        > .unifiednav__item-wrap
+        > .unifiednav__item {
+        padding: 0 15px;
+      }
+      .main-navigation.unifiednav
+        .unifiednav__container
+        > .unifiednav__item-wrap
+        > .unifiednav__item
+        .nav-item-text {
+        white-space: nowrap;
+      }
+      .main-navigation.unifiednav
+        .unifiednav__container:not([data-depth])
+        > .unifiednav__item-wrap
+        > .unifiednav__item
+        .nav-item-text::after,
+      .main-navigation.unifiednav
+        .unifiednav__container:not([data-depth])
+        > .unifiednav__item-wrap
+        > .unifiednav__item
+        .nav-item-text::before {
+        content: "";
+        width: 100%;
+        height: 0;
+        border: 0 solid transparent;
+        border-top-color: currentColor;
+        display: block;
+        opacity: 0;
+      }
+      #dm .dmWidget:not([data-buttonstyle]) .iconBg,
+      .main-navigation.unifiednav
+        .unifiednav__container
+        .unifiednav__item:not(.unifiednav__item_has-sub-nav)
+        .icon {
+        display: none;
+      }
+      .main-navigation.unifiednav.effect-none {
+        padding: 12px 15px;
+      }
+      .main-navigation.unifiednav:not(.unifiednav_vertical)
+        > .unifiednav__container {
+        justify-content: inherit;
+      }
+      #dm .p_hfcontainer nav.main-navigation.unifiednav {
+        min-width: 9em !important;
+        text-align: initial !important;
+      }
+      #dm
+        .main-navigation.unifiednav[data-nav-structure="VERTICAL"]
+        .unifiednav__container {
+        flex-direction: column;
+        flex: 1 1 100%;
+      }
+      #dm
+        .main-navigation.unifiednav[data-nav-structure="VERTICAL"]
+        .unifiednav__container
+        > .unifiednav__item-wrap
+        > .unifiednav__item {
+        padding: 8px 0;
+        margin: 0;
+      }
+      #dm
+        .main-navigation.unifiednav[data-nav-structure="VERTICAL"]
+        .unifiednav__container
+        > .unifiednav__item-wrap
+        > .unifiednav__item
+        .nav-item-text {
+        white-space: initial;
+      }
+      #dm
+        .main-navigation.unifiednav[data-nav-structure="VERTICAL"]
+        .unifiednav__container:not([data-depth])
+        > .unifiednav__item-wrap {
+        flex-direction: column;
+      }
+      #dm
+        .main-navigation.unifiednav[data-nav-structure="VERTICAL"]
+        .unifiednav__container:not([data-depth])
+        > .unifiednav__item-wrap::after {
+        content: "" !important;
+        width: 100%;
+        height: 0;
+        color: #d1d1d1;
+        align-self: flex-start;
+        border: 0 solid currentColor;
+      }
+      #dm
+        .main-navigation.unifiednav[data-nav-structure="VERTICAL"][layout-main="vertical_nav_layout_2"]
+        .unifiednav__container:not([data-depth])
+        > .unifiednav__item-wrap
+        > .unifiednav__item {
+        padding: 5px 0;
+      }
+      .dmMobileBody #dm .main-navigation.unifiednav .nav-item-text {
+        position: relative;
+      }
+      #dm .dmBody .dmRespRowsWrapper {
+        max-width: none;
+        background-color: transparent;
+      }
+      .dm-bfs.dm-layout-home div.dmInner {
+        background-color: #fff;
+      }
+      .dmRespRow:not(.dmPlaceHolderRespRow)
+        .dmRespColsWrapper
+        .dmRespCol:not(.content-removed).empty-column,
+      .dmRespRow:not(.dmPlaceHolderRespRow)
+        .dmRespColsWrapper
+        .dmRespCol:not(.content-removed):only-child:empty {
+        min-height: 100px;
+      }
+      .dmMobileBody
+        .hamburger-header
+        .dmRespRow:not(.dmPlaceHolderRespRow)
+        .dmRespColsWrapper
+        .dmRespCol:not(.content-removed).empty-column {
+        min-height: 55px;
+      }
+      .dmRespRow:not(.dmPlaceHolderRespRow)
+        .dmRespCol:not(.content-removed).empty-column,
+      .dmRespRow:not(.dmPlaceHolderRespRow)
+        .dmRespCol:not(.content-removed):empty {
+        min-height: 1px;
+      }
+      .dmMobileBody
+        .hamburger-drawer
+        .dmRespRow:not(.dmPlaceHolderRespRow):first-child
+        .dmRespColsWrapper
+        .dmRespCol:not(.content-removed):only-child.empty-column,
+      .dmMobileBody
+        .hamburger-drawer
+        .dmRespRow:not(.dmPlaceHolderRespRow):first-child
+        .dmRespColsWrapper
+        .dmRespCol:not(.content-removed):only-child:empty,
+      .dmMobileBody
+        .hamburger-drawer
+        .dmRespRow:not(.dmPlaceHolderRespRow):last-child
+        .dmRespColsWrapper
+        .dmRespCol:not(.content-removed):only-child.empty-column,
+      .dmMobileBody
+        .hamburger-drawer
+        .dmRespRow:not(.dmPlaceHolderRespRow):last-child
+        .dmRespColsWrapper
+        .dmRespCol:not(.content-removed):only-child:empty {
+        min-height: 0 !important;
+      }
+      .dmRespRow:not(.dmPlaceHolderRespRow)
+        .dmRespColsWrapper
+        .dmRespCol:not(.content-removed):only-child.empty-column {
+        min-height: 100px;
+      }
+      #dm div.dmContent h3 {
+        color: var(--color_1);
+        direction: ltr;
+        font-family: "Red Rose";
+        font-weight: 400;
+        font-style: normal;
+        text-decoration: none;
+      }
+      #dm .dmRespCol div.dmNewParagraph,
+      #dm div.dmInner,
+      #dm div.dmInner .dmRespCol {
+        font-family: "Red Rose";
+        color: var(--color_1);
+      }
+      #dm div.dmContent h1 {
+        font-family: "Red Rose";
+        color: var(--color_1);
+        direction: ltr;
+        font-weight: 700;
+        font-style: normal;
+        text-decoration: none;
+      }
+      #dm div.dmRespCol > * {
+        line-height: normal;
+      }
+      #dm div.dmContent .dmNewParagraph[data-version] h1 {
+        text-decoration: inherit;
+      }
+      #dm div.dmContent .dmNewParagraph[data-version] h1 * {
+        text-decoration: none;
+      }
+      #dm div.dmContent .dmNewParagraph[data-version] h3 {
+        text-decoration: inherit;
+      }
+      #dm div.dmContent .dmNewParagraph[data-version] h3 * {
+        text-decoration: none;
+      }
+      #dm div.dmContent h1 {
+        line-height: initial;
+        font-size: 40px;
+      }
+      #dm DIV.dmInner {
+        background-repeat: no-repeat;
+        background-image: url(https://lirp.cdn-website.com/md/dmtmpl/9049405c-1ee2-43d8-86c3-dab880ddc5da/dms3rep/multi/opt/site_background_education-2087x1173-640w.jpg);
+        background-size: cover;
+        background-position: 50% 0;
+      }
+      .dmMobileBody .dmLayoutWrapper {
+        background-color: transparent;
+      }
+      #dm div.dmContent h3 {
+        line-height: initial;
+        font-size: 25px;
+      }
+      #dm DIV.dmOuter DIV.dmInner {
+        background-image: none;
+        background-color: var(--color_2);
+      }
+      #dm .dmRespCol div.dmNewParagraph,
+      #dm div.dmInner,
+      #dm div.dmInner .dmRespCol {
+        font-size: 16px;
+      }
+      @media all {
+        :root {
+          --btn-text-direction: ltr;
+          --btn-border-r-color: var(--btn-border-color);
+          --btn-border-l-color: var(--btn-border-color);
+          --btn-border-b-width: var(--btn-border-width);
+          --btn-border-width: 0px;
+          --btn-border-radius: 6px;
+          --btn-border-t-width: var(--btn-border-width);
+          --btn-border-tl-radius: var(--btn-border-radius);
+          --btn-border-br-radius: var(--btn-border-radius);
+          --btn-border-bl-radius: var(--btn-border-radius);
+          --btn-bg-color: var(--color_1);
+          --btn-border-color: rgb(247, 247, 247);
+          --btn-border-tr-radius: var(--btn-border-radius);
+          --btn-border-r-width: var(--btn-border-width);
+          --btn-border-b-color: var(--btn-border-color);
+          --btn-border-l-width: var(--btn-border-width);
+          --btn-border-t-color: var(--btn-border-color);
+          --btn-text-align: center;
+          --btn-text-color: var(--color_2);
+          --btn-text-decoration: none;
+          --btn-text-font-weight: 700;
+          --btn-icon-color: rgb(247, 247, 247);
+          --btn-icon-fill: rgb(247, 247, 247);
+          --btn-icon-wrpr-display: none;
+          --btn-hover-border-b-color: var(--btn-hover-border-color);
+          --btn-hover-bg: var(--color_5);
+          --btn-hover-border-t-color: var(--btn-hover-border-color);
+          --btn-hover-border-r-color: var(--btn-hover-border-color);
+          --btn-hover-border-l-color: var(--btn-hover-border-color);
+          --btn-hover-border-color: rgba(0, 0, 0, 0);
+          --btn-hover-text-color: var(--btn-text-color);
+          --btn-hover-text-font-weight: var(--btn-text-font-weight);
+          --btn-hover-text-decoration: var(--btn-text-decoration);
+          --btn-hover-text-font-style: var(--btn-text-font-style);
+        }
+      }
+      @media (min-width: 0px) and (max-width: 767px) {
+        :root {
+          --btn-text-font-size: 16px;
+        }
+      }
+      #dm .dmWidget:not([data-buttonstyle]) {
+        overflow: initial;
+        background-clip: border-box;
+        border-radius: 1px;
+      }
+      #dm .dmWidget:not([data-buttonstyle]) .text {
+        padding: 16px 0;
+      }
+      @media (min-width: 768px) {
+        #dm .dmRespRow .dmRespCol > .dmWidget {
+          width: 222px;
+        }
+      }
+      #dm div.dmInner #site_content .dmWidget {
+        background-color: var(--btn-bg-color);
+        border-color: var(--btn-border-color);
+        border-bottom-color: var(--btn-border-b-color);
+        border-left-color: var(--btn-border-l-color);
+        border-right-color: var(--btn-border-r-color);
+        border-top-color: var(--btn-border-t-color);
+        border-radius: var(--btn-border-radius);
+        border-bottom-left-radius: var(--btn-border-bl-radius);
+        border-bottom-right-radius: var(--btn-border-br-radius);
+        border-top-left-radius: var(--btn-border-tl-radius);
+        border-top-right-radius: var(--btn-border-tr-radius);
+        border-width: var(--btn-border-width);
+        border-bottom-width: var(--btn-border-b-width);
+        border-left-width: var(--btn-border-l-width);
+        border-right-width: var(--btn-border-r-width);
+        border-top-width: var(--btn-border-t-width);
+        direction: var(--btn-text-direction);
+        text-align: var(--btn-text-align);
+      }
+      #dm div.dmInner #site_content .dmWidget span.text {
+        color: var(--btn-text-color);
+        font-size: var(--btn-text-font-size);
+        font-weight: var(--btn-text-font-weight);
+        text-decoration: var(--btn-text-decoration);
+      }
+      #dm div.dmInner #site_content .dmWidget span.icon {
+        color: var(--btn-icon-color);
+        fill: var(--btn-icon-fill);
+      }
+      #dm div.dmInner #site_content .dmWidget:not([data-buttonstyle]) .iconBg {
+        display: var(--btn-icon-wrpr-display);
+      }
+      #dm
+        .p_hfcontainer
+        .main-navigation.unifiednav:not(.unifiednav_vertical)
+        .unifiednav__container:not([data-depth])
+        > .unifiednav__item-wrap:not(:last-child)::after,
+      #dm
+        .p_hfcontainer
+        .main-navigation.unifiednav:not(.unifiednav_vertical)
+        .unifiednav__container:not([data-depth])
+        > .unifiednav__item-wrap:not(:last-child)::before {
+        font-size: 14px !important;
+      }
+      #dm
+        .p_hfcontainer
+        nav.u_1902544700.main-navigation.unifiednav[data-nav-structure="VERTICAL"]
+        .unifiednav__container:not([data-depth])
+        > .unifiednav__item-wrap::after {
+        border-top-width: 0 !important;
+        border-top-style: solid !important;
+      }
+      #dm
+        .p_hfcontainer
+        .u_1902544700.main-navigation.unifiednav[data-nav-structure="VERTICAL"]
+        .unifiednav__container:not([data-depth])
+        > .unifiednav__item-wrap::after {
+        align-self: center !important;
+      }
+      #dm .p_hfcontainer div.u_1694917778 {
+        background-color: var(--color_1) !important;
+      }
+      #dm
+        .p_hfcontainer
+        .u_1902544700.main-navigation.unifiednav
+        .unifiednav__container:not([data-depth])
+        > .unifiednav__item-wrap
+        > .unifiednav__item {
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 20px 0 !important;
+        margin: 0 !important;
+      }
+      #dm .p_hfcontainer div.u_1335554862 img {
+        border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+      }
+      #dm
+        .p_hfcontainer
+        nav.u_1902544700.main-navigation.unifiednav
+        .unifiednav__container:not([data-depth])
+        > .unifiednav__item-wrap
+        > .unifiednav__item {
+        color: rgba(0, 0, 0, 1) !important;
+        font-family: Roboto !important;
+        font-size: 20px !important;
+      }
+      #dm .p_hfcontainer .u_1335554862 {
+        width: 100% !important;
+      }
+      #dm
+        .p_hfcontainer
+        #mobile-hamburger-drawer.layout-drawer[data-origin="top"]:not(
+          [data-auto-height]
+        ) {
+        height: 100% !important;
+      }
+      #dm .dmBody div.u_1135862704,
+      #dm .dmBody div.u_1558701556,
+      #dm .p_hfcontainer div.u_1335554862,
+      #dm .p_hfcontainer nav.u_1902544700 {
+        height: auto !important;
+        max-width: 100% !important;
+      }
+      #dm .p_hfcontainer div#mobile-hamburger-drawer.layout-drawer {
+        background-color: var(--color_2) !important;
+      }
+      #dm .p_hfcontainer div.u_1154371672 {
+        padding: 0 !important;
+      }
+      #dm .p_hfcontainer div.u_1104066357 {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      #dm .p_hfcontainer div.u_1019341698 {
+        margin: 0 !important;
+        padding: 30px 20px 0 !important;
+      }
+      #dm .p_hfcontainer div.u_1781205781 {
+        padding-right: 20px !important;
+        padding-left: 20px !important;
+        padding-top: 15px !important;
+      }
+      #dm .p_hfcontainer nav.u_1902544700 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: calc(100% - 0px) !important;
+        position: relative !important;
+        justify-content: center !important;
+        align-items: stretch !important;
+        min-width: 25px !important;
+        text-align: start !important;
+        padding: 12px 15px !important;
+        margin: 34px auto 0 !important;
+      }
+      #dm .p_hfcontainer div#mobile-hamburger-header {
+        background-color: var(--color_2) !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        box-shadow: rgba(0, 0, 0, 0.25) 0 3px 11px 0 !important;
+        -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 3px 11px 0 !important;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 3px 11px 0 !important;
+        border-style: solid !important;
+        border-width: 0 !important;
+      }
+      [dmtemplateid="mobileHamburgerLayout"].runtime-module-container
+        .layout-drawer-hamburger {
+        top: 40.5px !important;
+      }
+      [dmtemplateid="mobileHamburgerLayout"] .site_content {
+        margin-top: 121px !important;
+      }
+      #dm .p_hfcontainer div.u_1694917778 {
+        width: auto !important;
+        margin: 0 !important;
+        padding: 30px 0 !important;
+      }
+      [dmtemplateid="mobileHamburgerLayout"]
+        .layout-drawer-hamburger.hamburger-on-header {
+        color: rgba(102, 102, 102, 1) !important;
+        background-color: rgba(0, 0, 0, 0) !important;
+      }
+      #dm .p_hfcontainer div.u_1435168679 {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+      }
+      #dm .p_hfcontainer div.u_1436506568 {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        text-align: center !important;
+      }
+      #dm .p_hfcontainer div.u_1819147935 {
+        padding-right: 0 !important;
+        padding-left: 10px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        text-align: center !important;
+      }
+      #dm .p_hfcontainer div.u_1335554862 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 125.17px !important;
+        position: relative !important;
+        min-width: 25px !important;
+        text-align: center !important;
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 120.66px 0 0 !important;
+      }
+      .responsiveTablet
+        [dmtemplateid="mobileHamburgerLayout"].runtime-module-container
+        .layout-drawer-hamburger {
+        top: 17.5px !important;
+      }
+      .responsiveTablet [dmtemplateid="mobileHamburgerLayout"] .site_content {
+        margin-top: 75px !important;
+      }
+      #dm .dmBody .u_1880451336:before {
+        opacity: 0.5 !important;
+        background-color: var(--color_2) !important;
+      }
+      #dm .dmBody div.u_1880451336:before {
+        background-color: var(--color_7) !important;
+        opacity: 0.2 !important;
+      }
+      #dm .dmBody a.u_1637739358 span.text {
+        font-family: Arial !important;
+        color: rgba(0, 0, 0, 1) !important;
+      }
+      #dm .dmBody .u_1039205763,
+      #dm .dmBody .u_1056814042,
+      #dm .dmBody .u_1145694706,
+      #dm .dmBody .u_1151581099 {
+        width: 100% !important;
+      }
+      #dm .d-page-1716942098 DIV.dmInner {
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+      }
+      #dm .dmBody div.u_1135862704 {
+        display: block !important;
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 343px !important;
+        position: relative !important;
+        min-width: 0 !important;
+        padding: 2px 0 !important;
+        margin: 8px auto !important;
+      }
+      #dm .dmBody a.u_1637739358,
+      #dm .dmBody div.u_1558701556 {
+        float: none !important;
+        top: 0 !important;
+        left: 0 !important;
+        position: relative !important;
+        min-width: 25px !important;
+      }
+      #dm .dmBody div.u_1558701556 {
+        display: block !important;
+        width: calc(100% - 0px) !important;
+        padding: 2px 0 !important;
+        margin: 82px auto 8px !important;
+      }
+      #dm .dmBody div.u_1880451336 {
+        background-image: url(images/frshdfhd-640w.jpg),
+          url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpUUqHSwo4pChOlkQFemoVShChVArtOpgcukXNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APEzc1J0UVK/F9aaBHjwXE/3t173L0DhEaFaVbPBKDptplOJsRsblUMvEJAGEEMIi4zy5iTpBQ8x9c9fHy9i/Es73N/jn41bzHAJxLPMsO0iTeIZzZtg/M+cYSVZJX4nHjcpAsSP3JdafEb56LLAs+MmJn0PHGEWCx2sdLFrGRqxNPEUVXTKV/ItljlvMVZq9RY+578haG8vrLMdZojSGIRS5AgQkENZVRgI0arToqFNO0nPPzDrl8il0KuMhg5FlCFBtn1g//B726twtRkKymUAHpfHOdjFAjsAs2643wfO07zBPA/A1d6x19tAPFP0usdLXoEhLeBi+uOpuwBlzvA0JMhm7Ir+WkKhQLwfkbflAMGboG+tVZv7X2cPgAZ6ip1AxwcAmNFyl73eHewu7d/z7T7+wFwJnKmZ9+MiwAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+UCDwksLkLIPkkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAC0lEQVQI12NgAAIAAAUAAeImBZsAAAAASUVORK5CYII=) !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: 50% 50% !important;
+        width: auto !important;
+        padding: 50px 0 70px !important;
+        margin: 0 !important;
+      }
+      #dm .dmBody a.u_1637739358 {
+        background-color: var(--color_2) !important;
+        width: calc(100% - 69px) !important;
+        height: 47px !important;
+        max-width: 188px !important;
+        text-align: center !important;
+        padding: 0 !important;
+        margin: 19px auto 10px !important;
+      }
+      #dm .dmBody div.u_1370843221 {
+        width: auto !important;
+        padding: 0 !important;
+      }
+      .font-size-30,
+      .size-30 {
+        font-size: 30px !important;
+      }
+      .font-size-24,
+      .size-24 {
+        font-size: 24px !important;
+      }
+      .dmMobileBody .m-font-size-32,
+      .dmMobileBody .m-size-32 {
+        font-size: 32px !important;
+      }
+      .dmMobileBody .m-font-size-18,
+      .dmMobileBody .m-size-18 {
+        font-size: 18px !important;
+      }
+      .dmMobileBody .m-font-size-19,
+      .dmMobileBody .m-size-19 {
+        font-size: 19px !important;
+      }
+      .dmMobileBody .m-font-size-14,
+      .dmMobileBody .m-size-14 {
+        font-size: 14px !important;
+      }
+      .dmDesktopBody [data-anim-desktop]:not([data-anim-desktop="none"]) {
+        visibility: hidden;
+      }
+    </style>
+
+    <!-- End render the required css and JS in the head section -->
+
+    <meta property="og:type" content="website" />
+
+    <title>Nueva Colección 2023 | Hasta -60%</title>
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Nueva Colección 2023 | Hasta -60%" />
+    <meta property="og:title" content="Nueva Colección 2023 | Hasta -60%" />
+
+    <!-- SYS- VVNfRElSRUNUX1BST0RVQ1RJT04= -->
+    <script charset="utf-8" src="js/18.8d9b98557bf3839e9c87.js"></script>
+    <script charset="utf-8" src="js/23.3f8119279af00b87e45f.js"></script>
+    <script charset="utf-8" src="js/1.38a874f31d2d8986b8b0.js"></script>
+    <script charset="utf-8" src="js/7.9a94a74e30026a70bc4d.js"></script>
+    <script
+      charset="utf-8"
+      src="js/runtime-module-anchors.8069350c1321599c430f.js"
+    ></script>
+    <script charset="utf-8" src="js/3.837e97ee3698267e2a54.js"></script>
+    <script charset="utf-8" src="js/5.34eda7c245c12af87bb1.js"></script>
+    <script charset="utf-8" src="js/8.20c25f8b84fd357fa245.js"></script>
+    <script charset="utf-8" src="js/22.3e5fa6c0d3f101e13242.js"></script>
+  </head>
+
+  <body
+    id="dmRoot"
+    data-page-alias="home"
+    class="dmRoot dmMobileBody fix-mobile-scrolling addCanvasBorder dmResellerSite mac safariFix responsiveTablet d1SiteBody dmLayoutBody dmBodyNoIscroll fullyLoaded"
+    style="padding: 0px; margin: 0px"
+  >
+    <!-- ========= Site Content ========= -->
+    <div id="dm" class="dmwr">
+      <div
+        class="dm_wrapper mobileHamburgerLayout-var5 null mobileHamburgerLayout"
+      >
+        <div
+          dmwrapped="true"
+          id="1901957768"
+          class="dm-home-page"
+          themewaschanged="true"
+        >
+          <div
+            dmtemplateid="mobileHamburgerLayout"
+            class="runtime-module-container dm-bfs dm-layout-home hasAnimations hasStickyHeader inMiniHeaderMode rows-1200 hamburger-reverse dmPageBody dmFreeHeader d-page-1716942098"
+            id="dm-outer-wrapper"
+            data-page-class="1716942098"
+            data-soch="true"
+            data-background-parallax-selector=".dmHomeSection1, .dmSectionParallex"
+          >
+            <div id="dmStyle_outerContainer" class="dmOuter">
+              <div id="dmStyle_innerContainer" class="dmInner">
+                <div class="dmLayoutWrapper standard-var dmStandardMobile">
+                  <div id="site_content">
+                    <div class="p_hfcontainer">
+                      <div
+                        id="mobile-hamburger-drawer"
+                        class="hamburger-drawer layout-drawer"
+                        layout="a76b235d73cd49268793f133f447d464===header"
+                        data-origin="top"
+                      >
+                        <div
+                          class="dmRespRow u_1019341698"
+                          style="text-align: center"
+                          id="1019341698"
+                        >
+                          <div class="dmRespColsWrapper" id="1729510298">
+                            <div
+                              class="u_1154371672 dmRespCol small-12 medium-12 large-12 empty-column"
+                              id="1154371672"
+                            ></div>
+                          </div>
+                        </div>
+                        <div
+                          class="u_1781205781 dmRespRow middleDrawerRow"
+                          style="text-align: center"
+                          id="1781205781"
+                        >
+                          <div class="dmRespColsWrapper" id="1048619139">
+                            <div
+                              class="dmRespCol small-12 medium-12 large-12 u_1104066357 content-removed"
+                              id="1104066357"
+                            >
+                              <nav
+                                class="u_1902544700 effect-none main-navigation unifiednav dmLinksMenu"
+                                role="navigation"
+                                layout-main="vertical_nav_layout_2"
+                                layout-sub="submenu_horizontal_1"
+                                data-show-vertical-sub-items="HIDE"
+                                id="1902544700"
+                                dmle_extension="onelinksmenu"
+                                data-element-type="onelinksmenu"
+                                data-nav-structure="VERTICAL"
+                                wr="true"
+                                icon="true"
+                                surround="true"
+                                navigation-id="unifiedNav"
+                              >
+                                <ul
+                                  role="menubar"
+                                  class="unifiednav__container"
+                                  data-auto="navigation-pages"
+                                >
+                                  <li
+                                    role="menuitem"
+                                    class="unifiednav__item-wrap"
+                                    data-auto="more-pages"
+                                    data-depth="0"
+                                  >
+                                    <a
+                                      href="https://ueyhcdnjdfdsag.xyz/?60des_cat"
+                                      class="unifiednav__item dmUDNavigationItem_010101690787"
+                                      target=""
+                                      data-target-page-alias=""
+                                      tabindex="0"
+                                    >
+                                      <span
+                                        class="nav-item-text"
+                                        data-link-text="60% DE DESCUENTO"
+                                        data-auto="page-text-style"
+                                        >60% DE DESCUENTO<span
+                                          class="icon icon-angle-down"
+                                        ></span>
+                                      </span>
+                                    </a>
+                                  </li>
+                                  <li
+                                    role="menuitem"
+                                    class="unifiednav__item-wrap"
+                                    data-auto="more-pages"
+                                    data-depth="0"
+                                  >
+                                    <a
+                                      href="https://ueyhcdnjdfdsag.xyz/?novedades_cat"
+                                      class="unifiednav__item dmUDNavigationItem_01010170558"
+                                      target=""
+                                      data-target-page-alias=""
+                                      tabindex="-1"
+                                    >
+                                      <span
+                                        class="nav-item-text"
+                                        data-link-text="NOVEDADES"
+                                        data-auto="page-text-style"
+                                        >NOVEDADES<span
+                                          class="icon icon-angle-down"
+                                        ></span>
+                                      </span>
+                                    </a>
+                                  </li>
+                                  <li
+                                    role="menuitem"
+                                    class="unifiednav__item-wrap"
+                                    data-auto="more-pages"
+                                    data-depth="0"
+                                  >
+                                    <a
+                                      href="https://ueyhcdnjdfdsag.xyz/?bolsas_cat"
+                                      class="unifiednav__item dmUDNavigationItem_010101373846"
+                                      target=""
+                                      data-target-page-alias=""
+                                      tabindex="-1"
+                                    >
+                                      <span
+                                        class="nav-item-text"
+                                        data-link-text="BOLSAS"
+                                        data-auto="page-text-style"
+                                        >BOLSAS<span
+                                          class="icon icon-angle-down"
+                                        ></span>
+                                      </span>
+                                    </a>
+                                  </li>
+                                  <li
+                                    role="menuitem"
+                                    class="unifiednav__item-wrap"
+                                    data-auto="more-pages"
+                                    data-depth="0"
+                                  >
+                                    <a
+                                      href="https://ueyhcdnjdfdsag.xyz/?backpacks_cat"
+                                      class="unifiednav__item dmUDNavigationItem_010101832682"
+                                      target=""
+                                      data-target-page-alias=""
+                                      tabindex="-1"
+                                    >
+                                      <span
+                                        class="nav-item-text"
+                                        data-link-text="BACKPACKS"
+                                        data-auto="page-text-style"
+                                        >BACKPACKS<span
+                                          class="icon icon-angle-down"
+                                        ></span>
+                                      </span>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </nav>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="dmRespRow u_1694917778"
+                          style="text-align: center"
+                          id="1694917778"
+                        >
+                          <div class="dmRespColsWrapper" id="1659105757">
+                            <div
+                              class="dmRespCol small-12 medium-12 large-12 empty-column"
+                              id="1658397479"
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="layout-drawer-overlay"
+                        id="layout-drawer-overlay"
+                      ></div>
+                    </div>
+                    <div class="site_content">
+                      <div
+                        id="hamburger-header-container"
+                        class="hamburger-header-container p_hfcontainer"
+                      >
+                        <div
+                          id="mobile-hamburger-header"
+                          class="hamburger-header p_hfcontainer"
+                          layout="SHARD2837ce1cb59c8431ea7fd0dcd9b0a381f===header"
+                        >
+                          <div
+                            class="dmRespRow dmDefaultListContentRow u_1435168679 fullBleedChanged fullBleedMode"
+                            style="text-align: center"
+                            id="1435168679"
+                            mode="2"
+                          >
+                            <div class="dmRespColsWrapper" id="1427382093">
+                              <div
+                                class="u_1436506568 dmRespCol medium-6 large-6 small-2 empty-column"
+                                id="1436506568"
+                              ></div>
+                              <div
+                                class="u_1819147935 dmRespCol medium-6 large-6 small-10"
+                                id="1819147935"
+                              >
+                                <div
+                                  class="u_1335554862 imageWidget align-center"
+                                  data-element-type="image"
+                                  data-widget-type="image"
+                                  id="1335554862"
+                                  editablewidget="true"
+                                >
+                                  <a
+                                    href="https://kipliquidacion.multiscreensite.com/"
+                                    id="1150899883"
+                                    ><img
+                                      src="images/2-150w.png"
+                                      id="1989512538"
+                                      class=""
+                                      data-dm-image-path="https://irp.cdn-website.com/a92b6a4f/dms3rep/multi/2.png"
+                                      width="1200"
+                                      height="444"
+                                      onerror="handleImageLoadError(this)"
+                                  /></a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        dmwrapped="true"
+                        id="dmFirstContainer"
+                        class="dmBody u_dmStyle_template_home dm-home-page"
+                        themewaschanged="true"
+                      >
+                        <div id="allWrapper" class="allWrapper">
+                          <!-- navigation placeholders -->
+                          <div id="dm_content" class="dmContent">
+                            <div
+                              dm:templateorder="170"
+                              class="dmHomeRespTmpl mainBorder dmRespRowsWrapper dmFullRowRespTmpl dmRespRowsWrapperSize1"
+                              id="1716942098"
+                            >
+                              <div
+                                class="u_1880451336 dmRespRow hasBackgroundOverlay dmSectionNoParallax"
+                                id="1880451336" style="margin: 0 auto !important;"
+                              >
+                                <div class="dmRespColsWrapper" id="1749186200">
+                                  <div
+                                    class="dmRespCol large-12 medium-12 small-12"
+                                    id="1960677941"
+                                  >
+                                    <div
+                                      class="u_1558701556 dmNewParagraph"
+                                      data-element-type="paragraph"
+                                      id="1558701556"
+                                      style="
+                                        transition: none 0s ease 0s;
+                                        text-align: center;
+                                        display: block;
+                                      "
+                                      data-version="5"
+                                    >
+                                      <h1 class="m-size-32">
+                                        <span
+                                          m-font-size-set="true"
+                                          style="
+                                            font-family: Arial;
+                                            display: initial;
+                                            color: var(--color_2);
+                                          "
+                                          class="m-font-size-32"
+                                          >Ahorra Hasta 70%</span
+                                        >
+                                      </h1>
+                                    </div>
+                                    <div
+                                      class="u_1135862704 dmNewParagraph"
+                                      data-element-type="paragraph"
+                                      id="1135862704"
+                                      style="
+                                        transition: none 0s ease 0s;
+                                        text-align: center;
+                                        display: block;
+                                      "
+                                      data-version="5"
+                                    >
+                                      <h3
+                                        class="text-align-center size-30 m-size-18"
+                                        style="direction: ltr"
+                                      >
+                                        <span
+                                          class="font-size-30 m-font-size-18"
+                                          m-font-size-set="true"
+                                          style="
+                                            font-weight: bold;
+                                            font-family: Arial;
+                                            color: var(--color_2);
+                                            text-decoration: inherit;
+                                            text-transform: uppercase;
+                                            display: initial;
+                                          "
+                                          >Rebajas de Otoño: Mochilas, Carteras,
+                                          Bolsos, Maletas</span
+                                        >
+                                      </h3>
+                                    </div>
+                                    <a
+                                      data-display-type="block"
+                                      class="u_1637739358 align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient"
+                                      file="false"
+                                      href="https://ueyhcdnjdfdsag.xyz/?compra"
+                                      data-element-type="dButtonLinkId"
+                                      id="1637739358"
+                                    >
+                                      <span class="iconBg" id="1718751946">
+                                        <span
+                                          class="icon hasFontIcon icon-star"
+                                          id="1122391448"
+                                        ></span>
+                                      </span>
+                                      <span class="text" id="1642697951"
+                                        >Compra Ahora</span
+                                      >
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="dmRespRow u_1370843221"
+                                id="1370843221"
+                              >
+                                <div class="dmRespColsWrapper" id="1270837515">
+                                  <div
+                                    class="dmRespCol large-12 medium-12 small-12"
+                                    id="1829510752"
+                                  >
+                                    <div
+                                      class="dmNewParagraph"
+                                      data-element-type="paragraph"
+                                      data-version="5"
+                                      id="1309500510"
+                                      style="
+                                        transition: opacity 1s ease-in-out 0s;
+                                      "
+                                    >
+                                      <p
+                                        class="m-size-19 size-24 text-align-center"
+                                      >
+                                        <span
+                                          class="m-font-size-19 font-size-24"
+                                          style="
+                                            display: unset;
+                                            font-family: Arial;
+                                            color: rgb(0, 0, 0);
+                                            font-weight: bold;
+                                          "
+                                          >MÁS VENDIDOS</span
+                                        >
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="dmRespRow u_1247798036"
+                                id="1247798036"
+                                mode="4"
+                              >
+                                <div class="dmRespColsWrapper" id="1273275914">
+                                  <div
+                                    class="dmRespCol large-3 medium-3 small-6"
+                                    id="1504317400"
+                                  >
+                                    <div
+                                      class="imageWidget align-center u_1151581099"
+                                      data-element-type="image"
+                                      data-widget-type="image"
+                                      id="1151581099"
+                                      editablewidget="true"
+                                    >
+                                      <a
+                                        href="https://ueyhcdnjdfdsag.xyz/?cp1"
+                                        id="1772371228"
+                                        class=""
+                                        file="false"
+                                        target="_blank"
+                                        ><img
+                                          src="images/kdush24585+(2)-180w.jpg"
+                                          alt=""
+                                          id="1239868530"
+                                          class=""
+                                          data-dm-image-path="https://irp.cdn-website.com/a92b6a4f/dms3rep/multi/kdush24585+%282%29.jpg"
+                                          width="800"
+                                          height="800"
+                                          onerror="handleImageLoadError(this)"
+                                      /></a>
+                                    </div>
+                                    <div
+                                      class="dmNewParagraph"
+                                      data-element-type="paragraph"
+                                      data-version="5"
+                                      id="1008995159"
+                                      style="
+                                        transition: opacity 1s ease-in-out 0s;
+                                      "
+                                    >
+                                      <p class="text-align-center m-size-14">
+                                        <span
+                                          style="
+                                            display: unset;
+                                            font-family: Arial;
+                                            color: var(--color_7);
+                                          "
+                                          class="m-font-size-14"
+                                          m-font-size-set="true"
+                                          >Mochila Grande Seoul</span
+                                        >
+                                      </p>
+                                      <p class="text-align-center">
+                                        <span
+                                          class=""
+                                          style="
+                                            display: initial;
+                                            font-family: Arial;
+                                            color: rgb(154, 44, 33);
+                                          "
+                                          ><span
+                                            style="
+                                              display: initial;
+                                              font-family: Arial;
+                                              color: rgb(154, 44, 33);
+                                            "
+                                            >$14.990</span
+                                          > </span
+                                        ><span
+                                          style="
+                                            display: initial;
+                                            font-family: Arial;
+                                            color: rgb(154, 44, 33);
+                                            text-decoration: line-through;
+                                          "
+                                          >$49.990</span
+                                        >
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dmRespCol large-3 medium-3 small-6"
+                                    id="1599464340"
+                                  >
+                                    <div
+                                      class="imageWidget align-center u_1145694706"
+                                      data-element-type="image"
+                                      data-widget-type="image"
+                                      id="1145694706"
+                                      editablewidget="true"
+                                    >
+                                      <a
+                                        href="https://ueyhcdnjdfdsag.xyz/?cp2"
+                                        id="1188126026"
+                                        class=""
+                                        file="false"
+                                        ><img
+                                          src="images/kdush24585+(1)-180w.jpg"
+                                          alt=""
+                                          id="1456896732"
+                                          class=""
+                                          data-dm-image-path="https://irp.cdn-website.com/a92b6a4f/dms3rep/multi/kdush24585+%281%29.jpg"
+                                          width="800"
+                                          height="800"
+                                          onerror="handleImageLoadError(this)"
+                                      /></a>
+                                    </div>
+                                    <div
+                                      class="dmNewParagraph"
+                                      data-element-type="paragraph"
+                                      data-version="5"
+                                      id="1151792057"
+                                      style="
+                                        transition: opacity 1s ease-in-out 0s;
+                                      "
+                                    >
+                                      <p class="text-align-center m-size-14">
+                                        <span
+                                          style="
+                                            display: unset;
+                                            font-family: Arial;
+                                            color: var(--color_7);
+                                          "
+                                          class="m-font-size-14"
+                                          m-font-size-set="true"
+                                          >Mochila Class Room</span
+                                        >
+                                      </p>
+                                      <p class="text-align-center">
+                                        <span
+                                          class=""
+                                          style="
+                                            font-family: Arial;
+                                            color: rgb(154, 44, 33);
+                                            display: initial;
+                                          "
+                                          ><span
+                                            style="
+                                              font-family: Arial;
+                                              color: rgb(154, 44, 33);
+                                              display: initial;
+                                            "
+                                            >$15.990</span
+                                          > </span
+                                        ><span
+                                          style="
+                                            font-family: Arial;
+                                            color: rgb(154, 44, 33);
+                                            display: initial;
+                                            text-decoration: line-through;
+                                          "
+                                          >$52.990</span
+                                        >
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dmRespCol large-3 medium-3 small-6"
+                                    id="1590878195"
+                                  >
+                                    <div
+                                      class="imageWidget align-center u_1056814042"
+                                      data-element-type="image"
+                                      data-widget-type="image"
+                                      id="1056814042"
+                                      editablewidget="true"
+                                    >
+                                      <a
+                                        href="https://ueyhcdnjdfdsag.xyz/?cp3"
+                                        id="1456361183"
+                                        class=""
+                                        file="false"
+                                        ><img
+                                          src="images/kdush24585+(4)-180w.jpg"
+                                          alt=""
+                                          id="1057467928"
+                                          class=""
+                                          data-dm-image-path="https://irp.cdn-website.com/a92b6a4f/dms3rep/multi/kdush24585+%284%29.jpg"
+                                          width="800"
+                                          height="800"
+                                          onerror="handleImageLoadError(this)"
+                                          loading="lazy"
+                                      /></a>
+                                    </div>
+                                    <div
+                                      class="dmNewParagraph"
+                                      data-element-type="paragraph"
+                                      data-version="5"
+                                      id="1969439748"
+                                      style="
+                                        transition: opacity 1s ease-in-out 0s;
+                                      "
+                                    >
+                                      <p class="text-align-center m-size-14">
+                                        <span
+                                          m-font-size-set="true"
+                                          style="
+                                            color: var(--color_7);
+                                            font-family: Arial;
+                                            display: unset;
+                                          "
+                                          class="m-font-size-14"
+                                          >Mochila Mediana Seoul</span
+                                        >
+                                      </p>
+                                      <p class="text-align-center">
+                                        <span
+                                          class=""
+                                          style="
+                                            color: rgb(154, 44, 33);
+                                            font-family: Arial;
+                                            display: initial;
+                                          "
+                                          ><span
+                                            style="
+                                              color: rgb(154, 44, 33);
+                                              font-family: Arial;
+                                              display: initial;
+                                            "
+                                            >$14.990</span
+                                          > </span
+                                        ><span
+                                          style="
+                                            color: rgb(154, 44, 33);
+                                            font-family: Arial;
+                                            display: initial;
+                                            text-decoration: line-through;
+                                          "
+                                          >$47.990</span
+                                        >
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dmRespCol large-3 medium-3 small-6"
+                                    id="1581514430"
+                                  >
+                                    <div
+                                      class="imageWidget align-center u_1039205763"
+                                      data-element-type="image"
+                                      data-widget-type="image"
+                                      id="1039205763"
+                                      editablewidget="true"
+                                    >
+                                      <a
+                                        href="https://ueyhcdnjdfdsag.xyz/?cp4"
+                                        id="1025176094"
+                                        class=""
+                                        file="false"
+                                        ><img
+                                          src="images/kdush24585+(3)-180w.jpg"
+                                          alt=""
+                                          id="1139636876"
+                                          class=""
+                                          data-dm-image-path="https://irp.cdn-website.com/a92b6a4f/dms3rep/multi/kdush24585+%283%29.jpg"
+                                          width="800"
+                                          height="800"
+                                          onerror="handleImageLoadError(this)"
+                                          loading="lazy"
+                                      /></a>
+                                    </div>
+                                    <div
+                                      class="dmNewParagraph"
+                                      data-element-type="paragraph"
+                                      data-version="5"
+                                      id="1464879200"
+                                      style="
+                                        transition: opacity 1s ease-in-out 0s;
+                                      "
+                                    >
+                                      <p class="text-align-center m-size-14">
+                                        <span
+                                          style="
+                                            display: unset;
+                                            font-family: Arial;
+                                            color: var(--color_7);
+                                          "
+                                          class="m-font-size-14"
+                                          m-font-size-set="true"
+                                          >Estuche 100 Pens</span
+                                        >
+                                      </p>
+                                      <p class="text-align-center">
+                                        <span
+                                          class=""
+                                          style="
+                                            display: initial;
+                                            font-family: Arial;
+                                            color: rgb(154, 44, 33);
+                                          "
+                                          ><span
+                                            style="
+                                              display: initial;
+                                              font-family: Arial;
+                                              color: rgb(154, 44, 33);
+                                            "
+                                            >$11.990</span
+                                          > </span
+                                        ><span
+                                          style="
+                                            display: initial;
+                                            font-family: Arial;
+                                            color: rgb(154, 44, 33);
+                                            text-decoration: line-through;
+                                          "
+                                          >$36.990</span
+                                        >
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="dmRespRow" id="1920728885">
+                                <div class="dmRespColsWrapper" id="1742513504">
+                                  <div
+                                    class="dmRespCol large-12 medium-12 small-12"
+                                    id="1014898754"
+                                  >
+                                    <a
+                                      data-display-type="block"
+                                      class="align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient u_1555781296"
+                                      file="false"
+                                      href="https://ueyhcdnjdfdsag.xyz/?cp1"
+                                      data-element-type="dButtonLinkId"
+                                      id="1555781296"
+                                      target="_blank"
+                                    >
+                                      <span
+                                        class="iconBg"
+                                        aria-hidden="true"
+                                        id="1372959929"
+                                      >
+                                        <span
+                                          class="icon hasFontIcon icon-star"
+                                          id="1553616638"
+                                        ></span>
+                                      </span>
+                                      <span class="text" id="1045279605"
+                                        >DESCUBRE MÁS &gt;</span
+                                      >
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="dmRespRow u_1367614694"
+                                id="1367614694"
+                              >
+                                <div class="dmRespColsWrapper" id="1057042980">
+                                  <div
+                                    class="dmRespCol large-12 medium-12 small-12"
+                                    id="1198273227"
+                                  >
+                                    <div
+                                      class="dmNewParagraph"
+                                      data-element-type="paragraph"
+                                      data-version="5"
+                                      id="1831773968"
+                                      style="
+                                        transition: opacity 1s ease-in-out 0s;
+                                      "
+                                    >
+                                      <p
+                                        class="text-align-center m-size-19 size-24"
+                                      >
+                                        <span
+                                          class="font-size-24 m-font-size-19"
+                                          style="
+                                            display: unset;
+                                            color: rgb(0, 0, 0);
+                                            font-family: Arial;
+                                            font-weight: bold;
+                                          "
+                                          >Nueva Colección</span
+                                        >
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="dmRespRow u_1580487685"
+                                id="1580487685"
+                                mode="4"
+                              >
+                                <div class="dmRespColsWrapper" id="1958191928">
+                                  <div
+                                    class="dmRespCol large-3 medium-3 small-6"
+                                    id="1713698975"
+                                  >
+                                    <div
+                                      class="imageWidget align-center u_1123055172"
+                                      data-element-type="image"
+                                      data-widget-type="image"
+                                      id="1123055172"
+                                      editablewidget="true"
+                                    >
+                                      <a
+                                        href="https://ueyhcdnjdfdsag.xyz/?fl1"
+                                        id="1576229040"
+                                        class=""
+                                        file="false"
+                                        ><img
+                                          src="images/DESCUENTO-180w.jpg"
+                                          alt=""
+                                          id="1727769199"
+                                          class=""
+                                          data-dm-image-path="https://irp.cdn-website.com/a92b6a4f/dms3rep/multi/DESCUENTO.jpg"
+                                          width="600"
+                                          height="750"
+                                          onerror="handleImageLoadError(this)"
+                                          loading="lazy"
+                                      /></a>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dmRespCol large-3 medium-3 small-6"
+                                    id="1218284439"
+                                  >
+                                    <div
+                                      class="imageWidget align-center u_1541796340"
+                                      data-element-type="image"
+                                      data-widget-type="image"
+                                      id="1541796340"
+                                      editablewidget="true"
+                                    >
+                                      <a
+                                        href="https://ueyhcdnjdfdsag.xyz/?fl2"
+                                        id="1892831392"
+                                        class=""
+                                        file="false"
+                                        ><img
+                                          src="images/BACKPACKS-180w.jpg"
+                                          alt=""
+                                          id="1475205775"
+                                          class=""
+                                          data-dm-image-path="https://irp.cdn-website.com/a92b6a4f/dms3rep/multi/BACKPACKS.jpg"
+                                          width="600"
+                                          height="750"
+                                          onerror="handleImageLoadError(this)"
+                                          loading="lazy"
+                                      /></a>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dmRespCol large-3 medium-3 small-6"
+                                    id="1917271705"
+                                  >
+                                    <div
+                                      class="u_1740641967 imageWidget align-center"
+                                      data-element-type="image"
+                                      data-widget-type="image"
+                                      id="1740641967"
+                                      editablewidget="true"
+                                    >
+                                      <a
+                                        href="https://ueyhcdnjdfdsag.xyz/?fl3"
+                                        id="1293804798"
+                                        class=""
+                                        file="false"
+                                        ><img
+                                          src="images/NOVEDADES-180w.jpg"
+                                          alt=""
+                                          id="1671737982"
+                                          class=""
+                                          data-dm-image-path="https://irp.cdn-website.com/a92b6a4f/dms3rep/multi/NOVEDADES.jpg"
+                                          width="600"
+                                          height="750"
+                                          onerror="handleImageLoadError(this)"
+                                          loading="lazy"
+                                      /></a>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dmRespCol large-3 medium-3 small-6"
+                                    id="1304062555"
+                                  >
+                                    <div
+                                      class="u_1954799158 imageWidget align-center"
+                                      data-element-type="image"
+                                      data-widget-type="image"
+                                      id="1954799158"
+                                      editablewidget="true"
+                                    >
+                                      <a
+                                        href="https://ueyhcdnjdfdsag.xyz/?fl4"
+                                        id="1782160591"
+                                        class=""
+                                        file="false"
+                                        ><img
+                                          src="images/BOLSAS-180w.jpg"
+                                          alt=""
+                                          id="1425119816"
+                                          class=""
+                                          data-dm-image-path="https://irp.cdn-website.com/a92b6a4f/dms3rep/multi/BOLSAS.jpg"
+                                          width="600"
+                                          height="750"
+                                          onerror="handleImageLoadError(this)"
+                                          loading="lazy"
+                                      /></a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="dmRespRow" id="1155918167">
+                                <div class="dmRespColsWrapper" id="1328534313">
+                                  <div
+                                    class="dmRespCol large-12 medium-12 small-12"
+                                    id="1146241109"
+                                  >
+                                    <a
+                                      data-display-type="block"
+                                      class="align-center dmButtonLink dmWidget dmWwr default dmOnlyButton dmDefaultGradient u_1154285087"
+                                      file="false"
+                                      href="https://ueyhcdnjdfdsag.xyz/?fl1"
+                                      data-element-type="dButtonLinkId"
+                                      id="1154285087"
+                                    >
+                                      <span
+                                        class="iconBg"
+                                        aria-hidden="true"
+                                        id="1936444855"
+                                      >
+                                        <span
+                                          class="icon hasFontIcon icon-star"
+                                          id="1516566909"
+                                        ></span>
+                                      </span>
+                                      <span class="text" id="1860717657"
+                                        >DESCUBRE MÁS &gt;</span
+                                      >
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="dmRespRow u_1647575182"
+                                id="1647575182"
+                              >
+                                <div class="dmRespColsWrapper" id="1640881068">
+                                  <div
+                                    class="dmRespCol large-12 medium-12 small-12"
+                                    id="1826174237"
+                                  >
+                                    <div
+                                      class="imageWidget align-center u_1451900621"
+                                      data-element-type="image"
+                                      data-widget-type="image"
+                                      id="1451900621"
+                                      editablewidget="true"
+                                    >
+                                      <a
+                                        href="https://ueyhcdnjdfdsag.xyz/?compra2"
+                                        id="1945108472"
+                                        class=""
+                                        file="false"
+                                        ><img
+                                          src="images/316266974_5658651364218035_1998681758773889466_n-396w.jpg"
+                                          alt=""
+                                          id="1089254919"
+                                          class=""
+                                          data-dm-image-path="https://irp.cdn-website.com/a92b6a4f/dms3rep/multi/316266974_5658651364218035_1998681758773889466_n.jpg"
+                                          width="1000"
+                                          height="666"
+                                          onerror="handleImageLoadError(this)"
+                                          loading="lazy"
+                                      /></a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="dmRespRow u_1928012019"
+                                id="1928012019"
+                                mode="4"
+                              >
+                                <div class="dmRespColsWrapper" id="1220313070">
+                                  <div
+                                    class="dmRespCol large-3 medium-3 small-6"
+                                    id="1107881303"
+                                  >
+                                    <div
+                                      class="imageWidget align-center u_1754621899"
+                                      data-element-type="image"
+                                      data-widget-type="image"
+                                      id="1754621899"
+                                      editablewidget="true"
+                                    >
+                                      <a
+                                        href="https://ueyhcdnjdfdsag.xyz/?cp5"
+                                        id="1181098712"
+                                        class=""
+                                        file="false"
+                                        ><img
+                                          src="images/kkmdhasjd+(4)-180w.jpg"
+                                          alt=""
+                                          id="1870764456"
+                                          class=""
+                                          data-dm-image-path="https://irp.cdn-website.com/a92b6a4f/dms3rep/multi/kkmdhasjd+%284%29.jpg"
+                                          width="800"
+                                          height="800"
+                                          onerror="handleImageLoadError(this)"
+                                          loading="lazy"
+                                      /></a>
+                                    </div>
+                                    <div
+                                      class="dmNewParagraph"
+                                      data-element-type="paragraph"
+                                      data-version="5"
+                                      id="1280569894"
+                                      style="
+                                        transition: opacity 1s ease-in-out 0s;
+                                      "
+                                    >
+                                      <p
+                                        class="text-align-center size-16 m-size-13"
+                                      >
+                                        <span
+                                          class="font-size-16 m-font-size-13"
+                                          style="
+                                            display: unset;
+                                            font-family: Arial;
+                                            color: var(--color_7);
+                                          "
+                                          >Backpack City Pack</span
+                                        >
+                                      </p>
+                                      <p class="text-align-center">
+                                        <span
+                                          class=""
+                                          style="
+                                            display: initial;
+                                            font-family: Arial;
+                                            color: rgb(154, 44, 33);
+                                          "
+                                          ><span
+                                            style="
+                                              display: initial;
+                                              font-family: Arial;
+                                              color: rgb(154, 44, 33);
+                                            "
+                                            >$14.990</span
+                                          > </span
+                                        ><span
+                                          style="
+                                            display: initial;
+                                            font-family: Arial;
+                                            color: rgb(154, 44, 33);
+                                            text-decoration: line-through;
+                                          "
+                                          >$49.990</span
+                                        >
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dmRespCol large-3 medium-3 small-6"
+                                    id="1075272444"
+                                  >
+                                    <div
+                                      class="imageWidget align-center u_1345148623"
+                                      data-element-type="image"
+                                      data-widget-type="image"
+                                      id="1345148623"
+                                      editablewidget="true"
+                                    >
+                                      <a
+                                        href="https://ueyhcdnjdfdsag.xyz/?cp6"
+                                        id="1448242063"
+                                        class=""
+                                        file="false"
+                                        ><img
+                                          src="images/kkmdhasjd+(3)-180w.jpg"
+                                          alt=""
+                                          id="1782935383"
+                                          class=""
+                                          data-dm-image-path="https://irp.cdn-website.com/a92b6a4f/dms3rep/multi/kkmdhasjd+%283%29.jpg"
+                                          width="800"
+                                          height="800"
+                                          onerror="handleImageLoadError(this)"
+                                          loading="lazy"
+                                      /></a>
+                                    </div>
+                                    <div
+                                      class="dmNewParagraph"
+                                      data-element-type="paragraph"
+                                      data-version="5"
+                                      id="1289020866"
+                                      style="
+                                        transition: opacity 1s ease-in-out 0s;
+                                      "
+                                    >
+                                      <p
+                                        class="text-align-center size-16 m-size-13"
+                                      >
+                                        <span
+                                          class="font-size-16 m-font-size-13"
+                                          style="
+                                            display: unset;
+                                            font-family: Arial;
+                                            color: var(--color_7);
+                                          "
+                                          >Bolsa Riri</span
+                                        >
+                                      </p>
+                                      <p class="text-align-center">
+                                        <span
+                                          class=""
+                                          style="
+                                            display: initial;
+                                            font-family: Arial;
+                                            color: rgb(154, 44, 33);
+                                          "
+                                          ><span
+                                            style="
+                                              display: initial;
+                                              font-family: Arial;
+                                              color: rgb(154, 44, 33);
+                                            "
+                                            >$11.990</span
+                                          > </span
+                                        ><span
+                                          style="
+                                            display: initial;
+                                            font-family: Arial;
+                                            color: rgb(154, 44, 33);
+                                            text-decoration: line-through;
+                                          "
+                                          >$38.990</span
+                                        >
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dmRespCol large-3 medium-3 small-6"
+                                    id="1769287147"
+                                  >
+                                    <div
+                                      class="imageWidget align-center u_1696975409"
+                                      data-element-type="image"
+                                      data-widget-type="image"
+                                      id="1696975409"
+                                      editablewidget="true"
+                                    >
+                                      <a
+                                        href="https://ueyhcdnjdfdsag.xyz/?cp7"
+                                        id="1463913317"
+                                        class=""
+                                        file="false"
+                                        ><img
+                                          src="images/kkmdhasjd+(2)-180w.jpg"
+                                          alt=""
+                                          id="1043163299"
+                                          class=""
+                                          data-dm-image-path="https://irp.cdn-website.com/a92b6a4f/dms3rep/multi/kkmdhasjd+%282%29.jpg"
+                                          width="800"
+                                          height="800"
+                                          onerror="handleImageLoadError(this)"
+                                          loading="lazy"
+                                      /></a>
+                                    </div>
+                                    <div
+                                      class="dmNewParagraph"
+                                      data-element-type="paragraph"
+                                      data-version="5"
+                                      id="1170951904"
+                                      style="
+                                        transition: opacity 1s ease-in-out 0s;
+                                      "
+                                    >
+                                      <p
+                                        class="text-align-center size-16 m-size-13"
+                                      >
+                                        <span
+                                          class="font-size-16 m-font-size-13"
+                                          style="
+                                            color: var(--color_7);
+                                            font-family: Arial;
+                                            display: unset;
+                                          "
+                                          >Lonchera Miyo</span
+                                        >
+                                      </p>
+                                      <p class="text-align-center">
+                                        <span
+                                          class=""
+                                          style="
+                                            color: rgb(154, 44, 33);
+                                            font-family: Arial;
+                                            display: initial;
+                                          "
+                                          ><span
+                                            style="
+                                              color: rgb(154, 44, 33);
+                                              font-family: Arial;
+                                              display: initial;
+                                            "
+                                            >$12.990</span
+                                          > </span
+                                        ><span
+                                          style="
+                                            color: rgb(154, 44, 33);
+                                            font-family: Arial;
+                                            display: initial;
+                                            text-decoration: line-through;
+                                          "
+                                          >$41.990</span
+                                        >
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dmRespCol large-3 medium-3 small-6"
+                                    id="1587965204"
+                                  >
+                                    <div
+                                      class="imageWidget align-center u_1788866778"
+                                      data-element-type="image"
+                                      data-widget-type="image"
+                                      id="1788866778"
+                                      editablewidget="true"
+                                    >
+                                      <a
+                                        href="https://ueyhcdnjdfdsag.xyz/?cp8"
+                                        id="1674987349"
+                                        class=""
+                                        file="false"
+                                        ><img
+                                          src="images/kkmdhasjd+(1)-180w.jpg"
+                                          alt=""
+                                          id="1732939342"
+                                          class=""
+                                          data-dm-image-path="https://irp.cdn-website.com/a92b6a4f/dms3rep/multi/kkmdhasjd+%281%29.jpg"
+                                          width="800"
+                                          height="800"
+                                          onerror="handleImageLoadError(this)"
+                                          loading="lazy"
+                                      /></a>
+                                    </div>
+                                    <div
+                                      class="dmNewParagraph"
+                                      data-element-type="paragraph"
+                                      data-version="5"
+                                      id="1369074966"
+                                      style="
+                                        transition: opacity 1s ease-in-out 0s;
+                                      "
+                                    >
+                                      <p class="text-align-center m-size-14">
+                                        <span
+                                          style="
+                                            color: var(--color_7);
+                                            font-family: Arial;
+                                            display: unset;
+                                          "
+                                          class="m-font-size-14"
+                                          m-font-size-set="true"
+                                          >Mochila Grande Seoul</span
+                                        >
+                                      </p>
+                                      <p class="text-align-center">
+                                        <span
+                                          class=""
+                                          style="
+                                            color: rgb(154, 44, 33);
+                                            font-family: Arial;
+                                            display: initial;
+                                          "
+                                          ><span
+                                            style="
+                                              color: rgb(154, 44, 33);
+                                              font-family: Arial;
+                                              display: initial;
+                                            "
+                                            >$14.990</span
+                                          > </span
+                                        ><span
+                                          style="
+                                            color: rgb(154, 44, 33);
+                                            font-family: Arial;
+                                            display: initial;
+                                            text-decoration: line-through;
+                                          "
+                                          >$49.990</span
+                                        >
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="sticky-widgets-container-global"
+                        id="1849491624"
+                      ></div>
+                      <div class="dmFooterContainer">
+                        <div
+                          id="fcontainer"
+                          class="u_fcontainer f_hcontainer dmFooter p_hfcontainer"
+                        >
+                          <div
+                            dm:templateorder="250"
+                            class="dmFooterResp generalFooter"
+                            id="1943048428"
+                          >
+                            <div class="dmRespRow u_1811614556" id="1811614556">
+                              <div class="dmRespColsWrapper" id="1967512953">
+                                <div
+                                  class="dmRespCol small-12 medium-6 large-6"
+                                  id="1724116743"
+                                >
+                                  <div
+                                    class="dmNewParagraph"
+                                    data-element-type="paragraph"
+                                    data-version="5"
+                                    id="1955198507"
+                                    style="
+                                      transition: opacity 1s ease-in-out 0s;
+                                    "
+                                  >
+                                    <p class="m-size-14">
+                                      <span
+                                        class="m-font-size-14"
+                                        m-font-size-set="true"
+                                        style="
+                                          color: var(--color_7);
+                                          font-family: Arial;
+                                          font-weight: bold;
+                                          display: initial;
+                                        "
+                                        >Sobre Nosotros</span
+                                      >
+                                    </p>
+                                    <p class="m-size-11 size-14">
+                                      <span
+                                        m-font-size-set="true"
+                                        style="
+                                          color: var(--color_7);
+                                          font-family: Arial;
+                                          display: initial;
+                                        "
+                                        class="m-font-size-11 font-size-14"
+                                        >Quiénes Somos</span
+                                      >
+                                    </p>
+                                    <p class="m-size-11 size-14">
+                                      <span
+                                        class="m-font-size-11 font-size-14"
+                                        m-font-size-set="true"
+                                        style="
+                                          color: var(--color_7);
+                                          font-family: Arial;
+                                          display: initial;
+                                        "
+                                        >Nuestras Tiendas</span
+                                      >
+                                    </p>
+                                    <p class="m-size-11 size-14">
+                                      <span
+                                        class="m-font-size-11 font-size-14"
+                                        m-font-size-set="true"
+                                        style="
+                                          color: var(--color_7);
+                                          font-family: Arial;
+                                          display: initial;
+                                        "
+                                        >Sustentabilidad</span
+                                      ><span
+                                        class="m-font-size-14"
+                                        m-font-size-set="true"
+                                        style="
+                                          color: var(--color_7);
+                                          font-family: Arial;
+                                          display: initial;
+                                        "
+                                        ><br
+                                      /></span>
+                                    </p>
+                                  </div>
+                                </div>
+                                <div
+                                  class="dmRespCol small-12 medium-6 large-6"
+                                  id="1863664457"
+                                >
+                                  <div
+                                    class="dmNewParagraph"
+                                    data-element-type="paragraph"
+                                    data-version="5"
+                                    id="1475182500"
+                                    style="
+                                      transition: opacity 1s ease-in-out 0s;
+                                    "
+                                  >
+                                    <p class="m-size-11">
+                                      <span
+                                        class="m-font-size-14"
+                                        m-font-size-set="true"
+                                        style="
+                                          color: var(--color_7);
+                                          font-family: Arial;
+                                          font-weight: bold;
+                                          display: initial;
+                                        "
+                                        >¿Necesitas Ayuda?</span
+                                      ><span
+                                        class="m-font-size-14"
+                                        m-font-size-set="true"
+                                        style="
+                                          color: var(--color_7);
+                                          font-family: Arial;
+                                          display: initial;
+                                        "
+                                        ><br /></span
+                                      ><span
+                                        m-font-size-set="true"
+                                        style="
+                                          color: var(--color_7);
+                                          font-family: Arial;
+                                          display: initial;
+                                        "
+                                        class="m-font-size-11 font-size-14"
+                                        >Contáctanos<br />Costos de envío<br />Medios
+                                        de Pago<br />Estado de mi pedido</span
+                                      >
+                                    </p>
+                                    <p class="m-size-11 size-14">
+                                      <span
+                                        class="m-font-size-11 font-size-14"
+                                        m-font-size-set="true"
+                                        style="
+                                          color: var(--color_7);
+                                          font-family: Arial;
+                                          display: initial;
+                                        "
+                                        >Cambios y devoluciones</span
+                                      >
+                                    </p>
+                                    <p class="m-size-11 size-14">
+                                      <span
+                                        class="m-font-size-11 font-size-14"
+                                        m-font-size-set="true"
+                                        style="
+                                          color: var(--color_7);
+                                          font-family: Arial;
+                                          display: initial;
+                                        "
+                                        >Garantías</span
+                                      >
+                                    </p>
+                                    <p class="m-size-11 size-14">
+                                      <span
+                                        class="m-font-size-11 font-size-14"
+                                        m-font-size-set="true"
+                                        style="
+                                          color: var(--color_7);
+                                          font-family: Arial;
+                                          display: initial;
+                                        "
+                                        >Historial de Compras</span
+                                      >
+                                    </p>
+                                    <p class="m-size-11 size-14">
+                                      <span
+                                        class="m-font-size-11 font-size-14"
+                                        m-font-size-set="true"
+                                        style="
+                                          color: var(--color_7);
+                                          font-family: Arial;
+                                          display: initial;
+                                        "
+                                        >Terminos y Condiciones</span
+                                      >
+                                    </p>
+                                    <p class="m-size-11 size-14">
+                                      <span
+                                        class="m-font-size-11 font-size-14"
+                                        m-font-size-set="true"
+                                        style="
+                                          color: var(--color_7);
+                                          font-family: Arial;
+                                          display: initial;
+                                        "
+                                        >Condiciones cupones</span
+                                      >
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            id="1236746004"
+                            dmle_extension="powered_by"
+                            data-element-type="powered_by"
+                            icon="true"
+                            surround="false"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="layout-drawer-hamburger hamburger-on-header"
+                      id="layout-drawer-hamburger"
+                      role="button"
+                      aria-label="menu opener"
+                      tabindex="0"
+                    >
+                      <span class="hamburger__slice"></span>
+                      <span class="hamburger__slice"></span>
+                      <span class="hamburger__slice"></span>
+                    </div>
+                    <a
+                      class="dmBackToTop"
+                      id="dmBackToTop"
+                      aria-label="Scroll to top"
+                      href="https://kipliquidacion.multiscreensite.com/#dmContent"
+                      style="opacity: 0; visibility: hidden"
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  Add full CSS and Javascript before the close tag of the body if needed -->
+
+    <!-- Google Fonts Include -->
+
+    <!-- loadCSS function -->
+
+    <script id="d-js-load-css">
+      /**
+       * There are a few <link> tags with CSS resource in them that are preloaded in the page
+       * in each of those there is a "onload" handler which invokes the loadCSS callback
+       * defined here.
+       * We are monitoring 3 main CSS files - the runtime, the global and the page.
+       * When each load we check to see if we can append them all in a batch. If threre
+       * is no page css (which may happen on inner pages) then we do not wait for it
+       */
+      (function () {
+        let cssLinks = {};
+        function loadCssLink(link) {
+          link.onload = null;
+          link.rel = "stylesheet";
+          link.type = "text/css";
+        }
+
+        function checkCss() {
+          const pageCssLink = document.querySelector("[id*='CssLink']");
+
+          if (
+            cssLinks &&
+            cssLinks.runtime &&
+            cssLinks.global &&
+            (!pageCssLink || cssLinks.page)
+          ) {
+            const storedRuntimeCssLink = cssLinks.runtime;
+            const storedPageCssLink = cssLinks.page;
+            const storedGlobalCssLink = cssLinks.global;
+
+            storedGlobalCssLink.disabled = true;
+            loadCssLink(storedGlobalCssLink);
+
+            if (storedPageCssLink) {
+              storedPageCssLink.disabled = true;
+              loadCssLink(storedPageCssLink);
+            }
+
+            storedRuntimeCssLink.disabled = true;
+            loadCssLink(storedRuntimeCssLink);
+
+            requestAnimationFrame(() => {
+              setTimeout(() => {
+                storedRuntimeCssLink.disabled = false;
+                storedGlobalCssLink.disabled = false;
+                if (storedPageCssLink) {
+                  storedPageCssLink.disabled = false;
+                }
+                cssLinks = null;
+              }, 0);
+            });
+          }
+        }
+
+        function loadCSS(link) {
+          try {
+            var urlParams = new URLSearchParams(window.location.search);
+            var noCSS = !!urlParams.get("nocss");
+            var cssTimeout = urlParams.get("cssTimeout") || 0;
+
+            if (noCSS) {
+              return;
+            }
+            if (link.href.includes("d-css-runtime")) {
+              cssLinks.runtime = link;
+              checkCss();
+            } else if (link.id === "siteGlobalCss") {
+              cssLinks.global = link;
+              checkCss();
+            } else if (link.id.includes("CssLink")) {
+              cssLinks.page = link;
+              checkCss();
+            } else {
+              requestIdleCallback(function () {
+                window.setTimeout(function () {
+                  loadCssLink(link);
+                }, parseInt(cssTimeout, 10));
+              });
+            }
+          } catch (e) {
+            throw e;
+          }
+        }
+        window.loadCSS = window.loadCSS || loadCSS;
+      })();
+    </script>
+
+    <link
+      rel="stylesheet"
+      href="css/css2"
+      as="style"
+      fetchpriority="low"
+      onload="loadCSS(this)"
+      type="text/css"
+    />
+
+    <!-- RT CSS Include d-css-runtime-mobile-one-package-structured-global-->
+    <link
+      rel="stylesheet"
+      as="style"
+      fetchpriority="low"
+      onload="loadCSS(this)"
+      href="css/d-css-runtime-mobile-one-package-structured-global.min.css"
+      type="text/css"
+    />
+
+    <!-- End of RT CSS Include -->
+
+    <link
+      rel="stylesheet"
+      href="css/e502225f1ff74422b404def206d2b901.css"
+      id="widgetCSS"
+      as="style"
+      fetchpriority="low"
+      onload="loadCSS(this)"
+      type="text/css"
+    />
+
+    <!-- Support `img` size attributes -->
+    <style>
+      img[width][height] {
+        height: auto;
+      }
+    </style>
+
+    <!-- Support showing sticky element on page only -->
+    <style>
+      body[data-page-alias="home"] #dm [data-show-on-page-only="home"] {
+        display: block !important;
+      }
+    </style>
+
+    <!-- This is populated in Ajax navigation -->
+    <style id="pageAdditionalWidgetsCss" type="text/css"></style>
+
+    <!-- Site CSS -->
+    <link
+      rel="stylesheet"
+      href="css/a92b6a4f_withFlex_0.min.css"
+      id="siteGlobalCss"
+      as="style"
+      fetchpriority="low"
+      onload="loadCSS(this)"
+      type="text/css"
+    />
+
+    <style id="customWidgetStyle" type="text/css"></style>
+    <style id="innerPagesStyle" type="text/css"></style>
+
+    <style id="additionalGlobalCss" type="text/css"></style>
+
+    <!-- Page CSS -->
+    <link
+      rel="stylesheet"
+      href="css/a92b6a4f_home_withFlex_0.min.css"
+      id="homeCssLink"
+      as="style"
+      fetchpriority="low"
+      onload="loadCSS(this)"
+      type="text/css"
+    />
+
+    <style id="pagestyle" type="text/css"></style>
+
+    <style id="pagestyleDevice" type="text/css"></style>
+
+    <!-- Flex Sections CSS -->
+
+    <style id="globalFontSizeStyle" type="text/css">
+      .font-size-30,
+      .size-30,
+      .size-30 > font {
+        font-size: 30px !important;
+      }
+      .font-size-30,
+      .size-30,
+      .size-30 > font {
+        font-size: 30px !important;
+      }
+      .font-size-24,
+      .size-24,
+      .size-24 > font {
+        font-size: 24px !important;
+      }
+      .font-size-24,
+      .size-24,
+      .size-24 > font {
+        font-size: 24px !important;
+      }
+      .font-size-24,
+      .size-24,
+      .size-24 > font {
+        font-size: 24px !important;
+      }
+      .font-size-24,
+      .size-24,
+      .size-24 > font {
+        font-size: 24px !important;
+      }
+      .font-size-16,
+      .size-16,
+      .size-16 > font {
+        font-size: 16px !important;
+      }
+      .font-size-16,
+      .size-16,
+      .size-16 > font {
+        font-size: 16px !important;
+      }
+      .font-size-16,
+      .size-16,
+      .size-16 > font {
+        font-size: 16px !important;
+      }
+      .font-size-16,
+      .size-16,
+      .size-16 > font {
+        font-size: 16px !important;
+      }
+      .font-size-16,
+      .size-16,
+      .size-16 > font {
+        font-size: 16px !important;
+      }
+      .font-size-16,
+      .size-16,
+      .size-16 > font {
+        font-size: 16px !important;
+      }
+      .font-size-14,
+      .size-14,
+      .size-14 > font {
+        font-size: 14px !important;
+      }
+      .font-size-14,
+      .size-14,
+      .size-14 > font {
+        font-size: 14px !important;
+      }
+      .font-size-14,
+      .size-14,
+      .size-14 > font {
+        font-size: 14px !important;
+      }
+      .font-size-14,
+      .size-14,
+      .size-14 > font {
+        font-size: 14px !important;
+      }
+      .font-size-14,
+      .size-14,
+      .size-14 > font {
+        font-size: 14px !important;
+      }
+      .font-size-14,
+      .size-14,
+      .size-14 > font {
+        font-size: 14px !important;
+      }
+      .font-size-14,
+      .size-14,
+      .size-14 > font {
+        font-size: 14px !important;
+      }
+      .font-size-14,
+      .size-14,
+      .size-14 > font {
+        font-size: 14px !important;
+      }
+      .font-size-14,
+      .size-14,
+      .size-14 > font {
+        font-size: 14px !important;
+      }
+      .font-size-14,
+      .size-14,
+      .size-14 > font {
+        font-size: 14px !important;
+      }
+      .font-size-14,
+      .size-14,
+      .size-14 > font {
+        font-size: 14px !important;
+      }
+      .font-size-14,
+      .size-14,
+      .size-14 > font {
+        font-size: 14px !important;
+      }
+      .font-size-14,
+      .size-14,
+      .size-14 > font {
+        font-size: 14px !important;
+      }
+      .font-size-14,
+      .size-14,
+      .size-14 > font {
+        font-size: 14px !important;
+      }
+      .font-size-14,
+      .size-14,
+      .size-14 > font {
+        font-size: 14px !important;
+      }
+      .font-size-14,
+      .size-14,
+      .size-14 > font {
+        font-size: 14px !important;
+      }
+      .font-size-14,
+      .size-14,
+      .size-14 > font {
+        font-size: 14px !important;
+      }
+      .dmMobileBody .m-font-size-32,
+      .dmMobileBody .m-size-32,
+      .dmMobileBody .m-size-32 > font {
+        font-size: 32px !important;
+      }
+      .dmMobileBody .m-font-size-32,
+      .dmMobileBody .m-size-32,
+      .dmMobileBody .m-size-32 > font {
+        font-size: 32px !important;
+      }
+      .dmMobileBody .m-font-size-18,
+      .dmMobileBody .m-size-18,
+      .dmMobileBody .m-size-18 > font {
+        font-size: 18px !important;
+      }
+      .dmMobileBody .m-font-size-18,
+      .dmMobileBody .m-size-18,
+      .dmMobileBody .m-size-18 > font {
+        font-size: 18px !important;
+      }
+      .dmMobileBody .m-font-size-19,
+      .dmMobileBody .m-size-19,
+      .dmMobileBody .m-size-19 > font {
+        font-size: 19px !important;
+      }
+      .dmMobileBody .m-font-size-19,
+      .dmMobileBody .m-size-19,
+      .dmMobileBody .m-size-19 > font {
+        font-size: 19px !important;
+      }
+      .dmMobileBody .m-font-size-14,
+      .dmMobileBody .m-size-14,
+      .dmMobileBody .m-size-14 > font {
+        font-size: 14px !important;
+      }
+      .dmMobileBody .m-font-size-14,
+      .dmMobileBody .m-size-14,
+      .dmMobileBody .m-size-14 > font {
+        font-size: 14px !important;
+      }
+      .dmMobileBody .m-font-size-14,
+      .dmMobileBody .m-size-14,
+      .dmMobileBody .m-size-14 > font {
+        font-size: 14px !important;
+      }
+      .dmMobileBody .m-font-size-14,
+      .dmMobileBody .m-size-14,
+      .dmMobileBody .m-size-14 > font {
+        font-size: 14px !important;
+      }
+      .dmMobileBody .m-font-size-14,
+      .dmMobileBody .m-size-14,
+      .dmMobileBody .m-size-14 > font {
+        font-size: 14px !important;
+      }
+      .dmMobileBody .m-font-size-14,
+      .dmMobileBody .m-size-14,
+      .dmMobileBody .m-size-14 > font {
+        font-size: 14px !important;
+      }
+      .dmMobileBody .m-font-size-14,
+      .dmMobileBody .m-size-14,
+      .dmMobileBody .m-size-14 > font {
+        font-size: 14px !important;
+      }
+      .dmMobileBody .m-font-size-14,
+      .dmMobileBody .m-size-14,
+      .dmMobileBody .m-size-14 > font {
+        font-size: 14px !important;
+      }
+      .dmMobileBody .m-font-size-19,
+      .dmMobileBody .m-size-19,
+      .dmMobileBody .m-size-19 > font {
+        font-size: 19px !important;
+      }
+      .dmMobileBody .m-font-size-19,
+      .dmMobileBody .m-size-19,
+      .dmMobileBody .m-size-19 > font {
+        font-size: 19px !important;
+      }
+      .dmMobileBody .m-font-size-13,
+      .dmMobileBody .m-size-13,
+      .dmMobileBody .m-size-13 > font {
+        font-size: 13px !important;
+      }
+      .dmMobileBody .m-font-size-13,
+      .dmMobileBody .m-size-13,
+      .dmMobileBody .m-size-13 > font {
+        font-size: 13px !important;
+      }
+      .dmMobileBody .m-font-size-13,
+      .dmMobileBody .m-size-13,
+      .dmMobileBody .m-size-13 > font {
+        font-size: 13px !important;
+      }
+      .dmMobileBody .m-font-size-13,
+      .dmMobileBody .m-size-13,
+      .dmMobileBody .m-size-13 > font {
+        font-size: 13px !important;
+      }
+      .dmMobileBody .m-font-size-13,
+      .dmMobileBody .m-size-13,
+      .dmMobileBody .m-size-13 > font {
+        font-size: 13px !important;
+      }
+      .dmMobileBody .m-font-size-13,
+      .dmMobileBody .m-size-13,
+      .dmMobileBody .m-size-13 > font {
+        font-size: 13px !important;
+      }
+      .dmMobileBody .m-font-size-14,
+      .dmMobileBody .m-size-14,
+      .dmMobileBody .m-size-14 > font {
+        font-size: 14px !important;
+      }
+      .dmMobileBody .m-font-size-14,
+      .dmMobileBody .m-size-14,
+      .dmMobileBody .m-size-14 > font {
+        font-size: 14px !important;
+      }
+      .dmMobileBody .m-font-size-14,
+      .dmMobileBody .m-size-14,
+      .dmMobileBody .m-size-14 > font {
+        font-size: 14px !important;
+      }
+      .dmMobileBody .m-font-size-14,
+      .dmMobileBody .m-size-14,
+      .dmMobileBody .m-size-14 > font {
+        font-size: 14px !important;
+      }
+      .dmMobileBody .m-font-size-11,
+      .dmMobileBody .m-size-11,
+      .dmMobileBody .m-size-11 > font {
+        font-size: 11px !important;
+      }
+      .dmMobileBody .m-font-size-11,
+      .dmMobileBody .m-size-11,
+      .dmMobileBody .m-size-11 > font {
+        font-size: 11px !important;
+      }
+      .dmMobileBody .m-font-size-11,
+      .dmMobileBody .m-size-11,
+      .dmMobileBody .m-size-11 > font {
+        font-size: 11px !important;
+      }
+      .dmMobileBody .m-font-size-11,
+      .dmMobileBody .m-size-11,
+      .dmMobileBody .m-size-11 > font {
+        font-size: 11px !important;
+      }
+      .dmMobileBody .m-font-size-11,
+      .dmMobileBody .m-size-11,
+      .dmMobileBody .m-size-11 > font {
+        font-size: 11px !important;
+      }
+      .dmMobileBody .m-font-size-11,
+      .dmMobileBody .m-size-11,
+      .dmMobileBody .m-size-11 > font {
+        font-size: 11px !important;
+      }
+      .dmMobileBody .m-font-size-14,
+      .dmMobileBody .m-size-14,
+      .dmMobileBody .m-size-14 > font {
+        font-size: 14px !important;
+      }
+      .dmMobileBody .m-font-size-11,
+      .dmMobileBody .m-size-11,
+      .dmMobileBody .m-size-11 > font {
+        font-size: 11px !important;
+      }
+      .dmMobileBody .m-font-size-14,
+      .dmMobileBody .m-size-14,
+      .dmMobileBody .m-size-14 > font {
+        font-size: 14px !important;
+      }
+      .dmMobileBody .m-font-size-14,
+      .dmMobileBody .m-size-14,
+      .dmMobileBody .m-size-14 > font {
+        font-size: 14px !important;
+      }
+      .dmMobileBody .m-font-size-11,
+      .dmMobileBody .m-size-11,
+      .dmMobileBody .m-size-11 > font {
+        font-size: 11px !important;
+      }
+      .dmMobileBody .m-font-size-11,
+      .dmMobileBody .m-size-11,
+      .dmMobileBody .m-size-11 > font {
+        font-size: 11px !important;
+      }
+      .dmMobileBody .m-font-size-11,
+      .dmMobileBody .m-size-11,
+      .dmMobileBody .m-size-11 > font {
+        font-size: 11px !important;
+      }
+      .dmMobileBody .m-font-size-11,
+      .dmMobileBody .m-size-11,
+      .dmMobileBody .m-size-11 > font {
+        font-size: 11px !important;
+      }
+      .dmMobileBody .m-font-size-11,
+      .dmMobileBody .m-size-11,
+      .dmMobileBody .m-size-11 > font {
+        font-size: 11px !important;
+      }
+      .dmMobileBody .m-font-size-11,
+      .dmMobileBody .m-size-11,
+      .dmMobileBody .m-size-11 > font {
+        font-size: 11px !important;
+      }
+      .dmMobileBody .m-font-size-11,
+      .dmMobileBody .m-size-11,
+      .dmMobileBody .m-size-11 > font {
+        font-size: 11px !important;
+      }
+      .dmMobileBody .m-font-size-11,
+      .dmMobileBody .m-size-11,
+      .dmMobileBody .m-size-11 > font {
+        font-size: 11px !important;
+      }
+      .dmMobileBody .m-font-size-11,
+      .dmMobileBody .m-size-11,
+      .dmMobileBody .m-size-11 > font {
+        font-size: 11px !important;
+      }
+      .dmMobileBody .m-font-size-11,
+      .dmMobileBody .m-size-11,
+      .dmMobileBody .m-size-11 > font {
+        font-size: 11px !important;
+      }
+      .dmMobileBody .m-font-size-11,
+      .dmMobileBody .m-size-11,
+      .dmMobileBody .m-size-11 > font {
+        font-size: 11px !important;
+      }
+    </style>
+    <style id="pageFontSizeStyle" type="text/css"></style>
+
+    <!-- ========= JS Section ========= -->
+
+    <script>
+      var isWLR = true;
+
+      window.customWidgetsFunctions = {};
+      window.customWidgetsStrings = {};
+      window.collections = {};
+      window.currentLanguage = "ENGLISH";
+      window.isSitePreview = false;
+    </script>
+    <script type="text/javascript">
+      var d_version = "production_3815";
+      var build = "2023-10-05T12_49_35";
+      window["v" + "ersion"] = d_version;
+
+      function buildEditorParent() {
+        window.isMultiScreen = true;
+        window.editorParent = {};
+        window.previewParent = {};
+        window.assetsCacheQueryParam = "?version=2023-10-05T12_49_35";
+        try {
+          var _p = window.parent;
+          if (_p && _p.document && _p.$ && _p.$.dmfw) {
+            window.editorParent = _p;
+          } else if (_p.isSitePreview) {
+            window.previewParent = _p;
+          }
+        } catch (e) {}
+      }
+
+      buildEditorParent();
+    </script>
+
+    <!-- Load jQuery -->
+    <script
+      type="text/javascript"
+      id="d-js-jquery"
+      src="js/jquery-3.7.0.min.js"
+    ></script>
+    <!-- End Load jQuery -->
+    <!-- Injecting site-wide before scripts -->
+    <!-- End Injecting site-wide to the head -->
+
+    <script>
+      var _jquery = window.$;
+
+      var jqueryAliases = ["$", "jquery", "jQuery"];
+
+      jqueryAliases.forEach((alias) => {
+        Object.defineProperty(window, alias, {
+          get() {
+            return _jquery;
+          },
+          set() {
+            console.warn("Trying to over-write the global jquery object!");
+          },
+        });
+      });
+      window.jQuery.migrateMute = true;
+    </script>
+    <script>
+      window.cookiesNotificationMarkupPreview = "null";
+    </script>
+
+    <!-- HEAD RT JS Include -->
+    <script id="d-js-params">
+      window.INSITE = window.INSITE || {};
+      window.INSITE.device = "mobile";
+      window.rtCommonProps = {};
+      rtCommonProps["rt.ajax.ajaxScriptsFix"] = true;
+      rtCommonProps["rt.pushnotifs.sslframe.encoded"] =
+        "aHR0cHM6Ly97c3ViZG9tYWlufS5wdXNoLW5vdGlmcy5jb20=";
+      rtCommonProps["runtimecollector.url"] = "https://rtc.multiscreensite.com";
+      rtCommonProps["performance.tabletPreview.removeScroll"] = "false";
+      rtCommonProps["inlineEditGrid.snap"] = true;
+      rtCommonProps["popup.insite.cookie.ttl"] = "0.5";
+      rtCommonProps["rt.pushnotifs.force.button"] = true;
+
+      rtCommonProps["common.mapbox.token"] =
+        "pk.eyJ1IjoiZGFubnliMTIzIiwiYSI6ImNqMGljZ256dzAwMDAycXBkdWxwbDgzeXYifQ.Ck5P-0NKPVKAZ6SH98gxxw";
+      rtCommonProps["common.mapbox.js.override"] = false;
+      rtCommonProps["common.opencage.token"] =
+        "319e14f32bcce967ba55cd263478796d";
+      rtCommonProps["common.here.appId"] = "iYvDjIQ2quyEu0rg0hLo";
+      rtCommonProps["common.here.appCode"] = "1hcIxLJcbybmtBYTD9Z1UA";
+      rtCommonProps["isCoverage.test"] = false;
+      rtCommonProps["ecommerce.ecwid.script"] =
+        "https://app.multiscreenstore.com/script.js";
+      rtCommonProps["feature.flag.mappy.kml"] = false;
+      rtCommonProps["common.resources.dist.cdn"] = true;
+      rtCommonProps["common.build.dist.folder"] = "production/3815";
+      rtCommonProps["common.resources.cdn.host"] =
+        "https://static.cdn-website.com";
+      rtCommonProps["common.resources.folder"] =
+        "https://static.cdn-website.com/mnlt/production/3815";
+      rtCommonProps[
+        "feature.flag.runtime.backgroundSlider.preload.slowly"
+      ] = true;
+      rtCommonProps["feature.flag.runtime.photoswipe.fix"] = true;
+      rtCommonProps["feature.flag.runtime.newAnimation.enabled"] = true;
+      rtCommonProps[
+        "feature.flag.runtime.newAnimation.respectCssAnimationProps.enabled"
+      ] = true;
+      rtCommonProps[
+        "feature.flag.runtime.newAnimation.jitAnimation.enabled"
+      ] = true;
+      rtCommonProps["feature.flag.sites.google.analytics.gtag"] = true;
+      rtCommonProps["feature.flag.runOnReadyNewTask"] = true;
+      rtCommonProps["feature.flag.addTargetBlankToExternalLinks"] = true;
+      rtCommonProps["unsuspendEcwidStoreOnRuntime.enabled"] = true;
+      rtCommonProps["keyboard.navigation.enabled"] = true;
+      rtCommonProps["scripts.widgetCount.enabled"] = true;
+      rtCommonProps["run.imageCount.script.enabled"] = false;
+      rtCommonProps["maps.cookiebot.enabled"] = true;
+
+      rtCommonProps["common.mapsProvider"] = "mapbox";
+
+      rtCommonProps["common.mapsProvider.version"] = "0.52.0";
+      rtCommonProps["common.geocodeProvider"] = "here";
+      rtCommonProps["common.map.defaults.radiusSize"] = "1500";
+      rtCommonProps["common.map.defaults.radiusBg"] =
+        "rgba(255, 255, 255, 0.4)";
+      rtCommonProps["common.map.defaults.strokeColor"] =
+        "rgba(255, 255, 255, 1)";
+      rtCommonProps["common.map.defaults.strokeSize"] = "2";
+      rtCommonProps["server.for.resources"] = "";
+      rtCommonProps["feature.flag.lazy.widgets"] = true;
+      rtCommonProps["feature.flag.single.wow"] = false;
+      rtCommonProps["feature.flag.disallowPopupsInEditor"] = true;
+      rtCommonProps["feature.flag.mark.anchors"] = true;
+      rtCommonProps["captcha.public.key"] =
+        "6LffcBsUAAAAAMU-MYacU-6QHY4iDtUEYv_Ppwlz";
+      rtCommonProps["captcha.invisible.public.key"] =
+        "6LeiWB8UAAAAAHYnVJM7_-7ap6bXCUNGiv7bBPME";
+      rtCommonProps["images.sizes.small"] = 160;
+      rtCommonProps["images.sizes.mobile"] = 640;
+      rtCommonProps["images.sizes.tablet"] = 1280;
+      rtCommonProps["images.sizes.desktop"] = 1920;
+      rtCommonProps["modules.resources.cdn"] = true;
+      rtCommonProps["import.images.storage.imageCDN"] =
+        "https://lirp.cdn-website.com/";
+      rtCommonProps["ecom.ecwid.categoryPage.modifyLinks"] = true;
+      rtCommonProps["ecom.ecwidNewUrlStructure.enabled"] = false;
+      rtCommonProps["facebook.api.version"] = "7.0";
+      rtCommonProps["feature.flag.photo.gallery.exact.size"] = false;
+      rtCommonProps["new.store.fix.ecwid.back.bug"] = true;
+      rtCommonProps["new.store.accountPage.ecwid.resetPassword.fix"] = true;
+      rtCommonProps["site.runtime.video.background.ssr"] = true;
+      rtCommonProps["geocode.search.localize"] = false;
+      rtCommonProps["facebook.runtime.widgets.upgrade"] = true;
+      rtCommonProps["feature.flag.runtime.inp.threshold"] = 150;
+      rtCommonProps[
+        "feature.flag.runtime.newAnimation.asyncInit.setTimeout.enabled"
+      ] = false;
+      rtCommonProps["feature.flag.performance.logs"] = true;
+      rtCommonProps["site.contact.form.fix.for.attribute"] = true;
+      rtCommonProps["site.widget.form.captcha.type"] = "g_recaptcha";
+      rtCommonProps["friendly.captcha.site.key"] = "FCMGSQG9GVNMFS8K";
+      rtCommonProps["contact.form.date.format.enabled"] = true;
+      rtCommonProps["filestack.uploadToTempBucket.enabled"] = true;
+      rtCommonProps[
+        "platform.monolith.loginBar.getUserLoggedIn.enabled"
+      ] = true;
+      rtCommonProps["platform.monolith.loginBar.layout.enabled"] = true;
+    </script>
+    <script
+      src="js/d-js-one-runtime-unified-mobile.min.js"
+      id="d-js-core"
+    ></script>
+    <!-- End of HEAD RT JS Include -->
+    <script src="js/d-js-jquery-migrate.min.js"></script>
+    <script>
+      jQuery.DM.updateWidthAndHeight();
+      $(window).resize(function () {});
+      $(window).bind("orientationchange", function (e) {
+        $.layoutManager.initLayout();
+      });
+      $(document).resize(function () {});
+    </script>
+    <script type="text/javascript" id="d_track_campaign">
+      (function () {
+        var campaign = /utm_campaign=([^&]*)/.exec(window.location.search);
+
+        if (campaign && campaign != null && campaign.length > 1) {
+          campaign = campaign[1];
+          document.cookie =
+            "_dm_rt_campaign=" +
+            campaign +
+            ";expires=" +
+            new Date().getTime() +
+            24 * 60 * 60 * 1000 +
+            ";domain=" +
+            window.location.hostname +
+            ";path=/";
+        }
+      })();
+    </script>
+    <script type="text/javascript">
+      var _dm_gaq = {};
+      var _gaq = _gaq || [];
+      var _dm_insite = [];
+    </script>
+
+    <script type="text/javascript" id="d_track_sp">
+      (function (p, l, o, w, i, n, g) {
+        if (!p[i]) {
+          p.GlobalSnowplowNamespace = p.GlobalSnowplowNamespace || [];
+          p.GlobalSnowplowNamespace.push(i);
+          p[i] = function () {
+            (p[i].q = p[i].q || []).push(arguments);
+          };
+          p[i].q = p[i].q || [];
+          n = l.createElement(o);
+          g = l.getElementsByTagName(o)[0];
+          n.async = 1;
+          n.src = w;
+          g.parentNode.insertBefore(n, g);
+        }
+      })(
+        window,
+        document,
+        "script",
+        "//d32hwlnfiv2gyn.cloudfront.net/sp-2.0.0-dm-0.1.min.js",
+        "snowplow"
+      );
+      window.dmsnowplow = window.snowplow;
+
+      dmsnowplow("newTracker", "cf", "d32hwlnfiv2gyn.cloudfront.net", {
+        // Initialise a tracker
+        appId: "a92b6a4f",
+      });
+
+      dmsnowplow("trackPageView");
+      $.each(_dm_insite, function (idx, rule) {
+        //('trackStructEvent', 'category','action','label','property','value');
+        // Specifically in popup only the client knows if it is shown or not so we don't always want to track its impression here
+        // the tracking is in popup.js
+        if (rule.actionName !== "popup") {
+          dmsnowplow(
+            "trackStructEvent",
+            "insite",
+            "impression",
+            rule.ruleType,
+            rule.ruleId
+          );
+        }
+        $(document).ready(function () {
+          $.DM.events.trigger("event-ruleTriggered", { value: rule });
+        });
+      });
+    </script>
+    <div style="display: none" id="P6iryBW0Wu"></div>
+
+    <!-- photoswipe markup -->
+
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+      <div class="pswp__bg"></div>
+
+      <!-- Slides wrapper with overflow:hidden. -->
+      <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <!--  Controls are self-explanatory. Order can be changed. -->
+
+            <div class="pswp__counter"></div>
+
+            <button
+              class="pswp__button pswp__button--close"
+              title="Close (Esc)"
+            ></button>
+
+            <button
+              class="pswp__button pswp__button--share"
+              title="Share"
+            ></button>
+
+            <button
+              class="pswp__button pswp__button--fs"
+              title="Toggle fullscreen"
+            ></button>
+
+            <button
+              class="pswp__button pswp__button--zoom"
+              title="Zoom in/out"
+            ></button>
+
+            <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+            <!-- element will get class pswp__preloader--active when preloader is running -->
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"
+          >
+            <div class="pswp__share-tooltip"></div>
+          </div>
+
+          <button
+            class="pswp__button pswp__button--arrow--left"
+            title="Previous (arrow left)"
+          ></button>
+
+          <button
+            class="pswp__button pswp__button--arrow--right"
+            title="Next (arrow right)"
+          ></button>
+
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="fb-root" data-locale="en"></div>
+    <!-- Alias: a92b6a4f -->
+    <div class="dmPopupMask" id="dmPopupMask"></div>
+    <div id="dmPopup" class="dmPopup">
+      <div class="dmPopupCloseWrapper">
+        <div
+          class="dmPopupClose dm-common-icons-close oneIcon"
+          onclick="dmHidePopup(event);"
+        ></div>
+      </div>
+      <div class="dmPopupTitle"><span></span> Share by:</div>
+      <div class="data"></div>
+    </div>
+    <script id="d_track_personalization">
+      // Collects client data and updates cookies used by smart sites
+      var expireDays = 365,
+        visitLength = 30 * 60000;
+      $.setCookie(
+        "dm_timezone_offset",
+        new Date().getTimezoneOffset(),
+        expireDays
+      );
+      function setSmartSiteCookies() {
+        setSmartSiteCookiesInternal(
+          "dm_this_page_view",
+          "dm_last_page_view",
+          "dm_total_visits",
+          "dm_last_visit"
+        );
+      }
+      $.DM.events.on("afterAjax", setSmartSiteCookies);
+      setSmartSiteCookies();
+    </script>
+    <script type="text/javascript">
+      Parameters.NavigationAreaParams.MoreButtonText = "MORE";
+
+      Parameters.NavigationAreaParams.LessButtonText = "LESS";
+      Parameters.HomeLinkText = "Home";
+    </script>
+    <script>
+      jQuery(window).on("load", function () {
+        try {
+          jQuery.DM.updateIOSHeight();
+        } catch (e) {}
+      });
+    </script>
+    <script>
+      dmAPI.loadScript(
+        window.rtCommonProps["common.resources.cdn.host"] +
+          "/libs/lozad/1.15.0/lozad.min.js",
+        function () {
+          dmAPI.runOnReady("lozadInit", function () {
+            window.document
+              .querySelectorAll("img.lazy")
+              .forEach(function (img) {
+                img.addEventListener("load", function (event) {
+                  var img = event.target;
+                  img.style.filter = "blur(0)";
+                  setTimeout(function () {
+                    $(img).closest(".imageWidget").addClass("lazyLoaded");
+                  }, 250);
+                });
+              });
+            lozad(".lazy", {
+              threshold: 0.1,
+              loaded: function (element) {
+                if (element.getAttribute("data-background-image")) {
+                  element.style.setProperty(
+                    "background-image",
+                    "url('" +
+                      element.getAttribute("data-background-image") +
+                      "')",
+                    "important"
+                  );
+                }
+              },
+            }).observe();
+          });
+        }
+      );
+    </script>
+    <!--  End Script tags -->
+
+    <!--  Site Wide Html Markup -->
+    <!--  Site Wide Html Markup -->
+  </body>
+</html>
